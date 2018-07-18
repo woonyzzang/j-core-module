@@ -54,7 +54,7 @@ API | 설명
 API | 설명
 --- | ---
 @param {String} value | 교체를 수행할 문자열
-@param {RegExp||String} | find 검색할 문자열이나 정규식 패턴
+@param {RegExp or String} | find 검색할 문자열이나 정규식 패턴
 @param {String} rep | 대체할 문자열
 @return {String} | 대체된 결과 문자열
 
@@ -418,7 +418,7 @@ API | 설명
 API | 설명
 --- | ---
 @param {string} value | 문자열
-@param {string} type | 옵션 구분자 ('ONLY' || 'INCLUDE')
+@param {string} type | 옵션 구분자 ('ONLY' or 'INCLUDE')
 @return {boolean} | 결과값
 
 ```js
