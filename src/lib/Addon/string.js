@@ -104,7 +104,7 @@ const addonString = () => {
              * @param {String='...'} [truncation = '...'] - 꼬리글
              * @return {String} 결과 문자열 반환
              * @example
-             * {{LIB_NAME}}.string.cut('동해물과', 3, '...'); // '동...'
+             * {{LIB_NAME}}.string.cut('동해물과', 3, '...'); // '동해물...'
              */
             cut: function(value, length, truncation) {
                 const str = value;
@@ -123,7 +123,7 @@ const addonString = () => {
              * @param {String='...'} [truncation = '...'] - 꼬리글
              * @return {String} 결과 문자열 반환
              * @example
-             * {{LIB_NAME}}.string.cutByByte('동해물과', 3, '...'); // "동..."
+             * {{LIB_NAME}}.string.cutByByte('동해물과', 3, '...'); // '동...'
              */
             cutByByte: function(value, length, truncation) {
                 const str = value,
@@ -137,7 +137,7 @@ const addonString = () => {
             },
 
             /**
-             * 주어진 바이트길이에 해당하는 char index 반환(UTF-8 상에서 한글은 3바이트로 3바이트로 계산)
+             * 주어진 바이트길이에 해당하는 char index 반환(UTF-8 상에서 한글은 3바이트로 계산)
              * @param {String} value - 문자열
              * @param {Number} length - 제한 문자수
              * @return {Number} 결과 문자열에 해당하는 char index 반환
@@ -163,7 +163,7 @@ const addonString = () => {
              * @param {String} value - 문자열
              * @return {String} 결과 문자열
              * @example
-             * {{LIB_NAME}}.string.capitalize('abCdEfg'); // "Abcdefg"
+             * {{LIB_NAME}}.string.capitalize('abCdEfg'); // 'Abcdefg'
              */
             capitalize: function(value) {
                 return (value)? value.charAt(0).toUpperCase() + value.substring(1) : value;
@@ -187,7 +187,7 @@ const addonString = () => {
              * @param {String} value - 문자열
              * @return {String} 결과 문자열
              * @example
-             * {{LIB_NAME}}.string.capitalize("ab-cd-efg"); // "abCdEfg"
+             * {{LIB_NAME}}.string.camelize('ab-cd-efg'); // 'abCdEfg'
              */
             camelize: function(value) {
                 return (value)? value.replace(/(\-|_|\s)+(.)?/g, function (a, b, c) {
@@ -207,7 +207,7 @@ const addonString = () => {
             },
 
             /**
-             * 주어진 문자열을 지정한 수만큼 반복하여 조합
+             * 주어진 문자열을 지정한 수만큼 연속적으로 반복하여 조합
              * @param {String} value - 문자열
              * @param {Number} cnt - 반복 횟수
              * @return {String} 결과 문자열
@@ -240,7 +240,7 @@ const addonString = () => {
             },
 
             /**
-             * HTML ENTITY로 변환된 문자열을 원래 기호로 변환
+             * HTML ENTITY로 변환된 문자열을 원래 특수기호로 변환
              * @param {String} value - 문자열
              * @return {String} 결과 문자열
              * @example
@@ -271,8 +271,8 @@ const addonString = () => {
              * @return {String} 토글된 상태값 반환
              * @example
              * // 정렬버튼에 이용
-             * {{LIB_NAME}}.string.toggle('ASC', 'ASC', 'DESC'); // "DESC"
-             * {{LIB_NAME}}.string.toggle('DESC', 'ASC', 'DESC'); // "ASC"
+             * {{LIB_NAME}}.string.toggle('ASC', 'ASC', 'DESC'); // 'DESC'
+             * {{LIB_NAME}}.string.toggle('DESC', 'ASC', 'DESC'); // 'ASC'
              */
             toggle: function(value, these, other) {
                 return (value === these)? other : value;
