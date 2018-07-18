@@ -5,7 +5,7 @@
 
 ## 목차
 
-- [addComma()](#addComma)
+- [addComma()](#addcomma)
 - [random()](#random)
 - [limit()](#limit)
 - [parse()](#parse)
