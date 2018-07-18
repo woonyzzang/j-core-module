@@ -1,6 +1,52 @@
 # 코어 라이브러리
 코어 라이브러리를 사용하면 아래 목록의 확장 기능들을 사용하여 어플리케이션 개발이 가능 합니다.
 
+## {{LIB_NAME}}.debug
+> 디버깅 로그
+
+- log()
+- logs()
+
+## {{LIB_NAME}}.each()
+> 반복 함수
+
+## {{LIB_NAME}}.reverse()
+> 역순 반복 함수
+
+## {{LIB_NAME}}.extend()
+> 객체 병합 함수
+
+## {{LIB_NAME}}.clone()
+> 객체 복제 함수
+
+## {{LIB_NAME}}.emptyFn
+> 빈 함수
+
+## {{LIB_NAME}}.tmpInput
+> 특정속성을 지원하는지 체크하기 위한 엘리먼트
+
+
+## {{LIB_NAME}}.tmpNode
+> 특정 css스타일을 지원하는지 체크하기 위한 엘리먼트
+
+## {{LIB_NAME}}.is()
+> 타입 체크
+
+## {{LIB_NAME}}.isEmpty()
+> 주어진 인자가 빈값인지 체크
+
+## {{LIB_NAME}}.hasOwn()
+> 객체 자체에 주어진 이름의 속성이 있는지 조회
+
+## {{LIB_NAME}}.namespace()
+> 네임스페이스 공간을 생성하고 객체를 설정하며 .를 구분자로 하여 하위 네임스페이스를 생성
+
+## {{LIB_NAME}}.dependency()
+> 의존성 모듈 패턴
+
+## {{LIB_NAME}}.define()
+> 코어 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
+
 ## {{LIB_NAME}}.number
 > 숫자 관련 코어 확장 기능
 

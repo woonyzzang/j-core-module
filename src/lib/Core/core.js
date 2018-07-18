@@ -30,7 +30,7 @@ extend(Core, {
     reverse: reverse, // 역순 반복함수
     extend: extend, // 객체 병합함수
     clone: clone, // 객체 복제함수
-    emptyFn: function() {}, // 빈함수
+    emptyFn: function() {}, // 빈 함수
 
     /**
      * 특정속성을 지원하는지 체크하기 위한 엘리먼트
@@ -232,7 +232,7 @@ extend(Core, {
 
 /** 코어 별칭 */
 Core.name = Core.constructor;
-Core.ver = 'v1.0';
+Core.ver = 'v1.0.0';
 Core.ns = Core.namespace;
 Core.modules = Core.dependency;
 Core.module = Core.dependency.module = {};
