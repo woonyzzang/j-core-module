@@ -49,7 +49,7 @@
 
 <br>
 
-## {{LIB_NAME}}.number
+## [{{LIB_NAME}}.number](number.md)
 > 숫자 관련 코어 확장 기능
 
 - addComma()
@@ -58,7 +58,7 @@
 - parse()
 - toKor()
 
-## {{LIB_NAME}}.string
+## [{{LIB_NAME}}.string](string.md)
 > 문자열 관련 코어 확장 기능
 
 - trim()
