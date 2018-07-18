@@ -2,8 +2,6 @@
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -34,11 +32,6 @@ module.exports = {
     //publicPath: '/'
   },
 
-  /*externals: {
-    'jquery': 'jQuery',
-    'jquery-mobile': 'jQuery.mobile'
-  },*/
-
   // 개발 서버
   devServer: {
     host : '127.0.0.1', // 사용될 호스트 지정 | webpack-dev-server –host 127.0.0.1
@@ -53,43 +46,6 @@ module.exports = {
   // 모듈로더
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        //use: ['style-loader', 'css-loader'],
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        }),
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        /*use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]*/
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [{
-            loader: 'css-loader'
-          }, {
-            loader: 'sass-loader'
-          }]
-        })
-      },
       {
         test: /\.js?$/,
         use: [
@@ -117,42 +73,6 @@ module.exports = {
           }
         ],
         exclude: ['/node_modules']
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      },
-      // 시스템에 존재하는 파일. 즉 이미지와 같은 자산들을 하나로 통합
-      /*{
-      	test: /\.(png|svg|jpe?g|gif)$/,
-      	loader:'file-loader',
-        options: {
-          //publicPath: 'img/',
-          name: 'img/[name].[ext]?[hash]'
-        }
-    	},*/
-
-      // 시스템에 존재하는 파일. 즉 폰트와 같은 자산들을 하나로 통합
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader:'file-loader',
-        options: {
-          //publicPath: 'font/',
-          name: 'font/[name].[ext]?[hash]'
-        }
-      },
-
-      // 작은 이미지나 글꼴 파일은 복사하지 않고 base64 문자열 형태로 변환
-      {
-        test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader',
-        options: {
-          //publicPath: 'assets/',
-          name: 'img/[name].[ext]?[hash]',
-          // limit는 파일의 크기를 말하는데 현재 10KB 미만은 url-loader로 처리가 되고 그 이상의 파일은 file-loder와 같이 처리가 된다.
-          limit: 10000 //10kb
-        }
       }
     ]
   },
@@ -172,13 +92,6 @@ module.exports = {
       // },
       inject: true,
       xhtml: false
-    }),
-
-    // 외부 스타일 시트 생성 플러그인
-    new ExtractTextPlugin({
-      filename: 'css/app.css',
-      disable : false,
-      allChunks : true
     }),
 
     // 로더들에게 옵션을 넣어주는 플러그인
@@ -219,19 +132,6 @@ module.exports = {
     //     comments: false
     //   }
     // }),
-
-    // 등록된 모듈을 자동으로 로드한다. 모듈에서 임의의 변수로 식별될 때마다 모듈이 자동으로 로드되며, 이 모듈은 로드된 모듈의 내보내기 모듈로 채워진다.
-    /*new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),*/
-
-    // 개별 파일 또는 전체 디렉토리를 빌드 디렉터리에 복사(from은 개발파일 to는 빌드파일 경로로 설정)
-    /*new CopyWebpackPlugin([
-      {from:'./src/img/**', to:'./img', flatten:true}
-      //{from:'./src/css/fonts', to:'./css/fonts', flatten:true}
-    ])*/
 
     // 여러 청크들 간에 공통적으로 사용되는 모듈들을 따로 하나로 모아두는 역할
     /*new webpack.optimize.CommonsChunkPlugin({
