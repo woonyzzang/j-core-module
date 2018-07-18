@@ -323,7 +323,8 @@ API | 설명
 {{LIB_NAME}}.string.toggle('ASC', 'ASC', 'DESC');
 
  // 'DESC'
-
+```
+```js
 {{LIB_NAME}}.string.toggle('DESC', 'ASC', 'DESC');
 
 // 'ASC'
@@ -346,7 +347,8 @@ API | 설명
 {{LIB_NAME}}.string.format('{0}:{1}:{2} {0}', 'a', 'b', 'c');
 
  // 'a:b:c a'
-
+ ```
+ ```js
 {{LIB_NAME}}.string.format('{a}:{b}:{c} {d}', {a: 'a', b: 'b', c: 'c', d: 'd'});
 
  // 'a:b:c a'
