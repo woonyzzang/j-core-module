@@ -35,7 +35,7 @@ const addonNumber = () => {
         /**
          * min ~ max사이의 랜덤값 반환
          * @param {Number} min - 최소값
-         * @param {Number=} max - 최대값
+         * @param {Number} max - 최대값
          * @return {Number} 랜덤값 반환
          */
         random: function(min, max) {

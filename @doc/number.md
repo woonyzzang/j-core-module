@@ -40,7 +40,7 @@ min ~ max사이의 랜덤값을 반환 합니다.
 API | 설명
 --- | ---
 @param {Number} min | 최소값
-@param {Number=} max | 최대값
+@param {Number} max | 최대값
 @return {Number} | 랜덤값 반환
 
 ```js
