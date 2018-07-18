@@ -47,6 +47,8 @@
 ## {{LIB_NAME}}.define()
 > 코어 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
 
+<br>
+
 ## {{LIB_NAME}}.number
 > 숫자 관련 코어 확장 기능
 
