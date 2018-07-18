@@ -10,7 +10,9 @@
 - [random()](#random)
 - [limit()](#limit)
 - [parse()](#parse)
-- [toKor()](#toKor())
+- [toKor()](#toKor)
+
+<br>
 
 ## addComma()
 
