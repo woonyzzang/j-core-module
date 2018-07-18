@@ -7,10 +7,10 @@
 ## 확장기능
 
 - [addComma()](#addComma)
-- [random()]()
-- [limit()]()
-- [parse()]()
-- [toKor()]()
+- [random()](#random)
+- [limit()](#limit)
+- [parse()](#parse)
+- [toKor()](#toKor())
 
 ## addComma()
 
