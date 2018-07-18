@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Module</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+
+<script src="jquery-1.8.3.min.js"></script>
+<script src="app.core.min.js"></script>
+<script src="app.module.js"></script>
+<script>
+// #클래스
+var Parent = JUI.Class({
+    show: function() {
+        alert('-parent show-');
+    },
+    hide: function() {
+        alert('-parent hide-');
+    }
+});
+
+// #클래스 상속(확장)
+var Child = JUI.Class({
+    $extend: Parent, // 부모 클래스 확장 선언 (부모 클래스 기능을 물려받음)
+    show: function() { // 부모와 같은 메소드일 경우 오버라이딩
+        this.supr(); // 부모 메소드 호출
+        alert('-child show-');
+    },
+    test: function() {
+        this.suprMethod('show');
+    }
+});
+
+// #싱글톤 클래스
+var Static = JUI.Class({
+    $singleton: true, // 싱글톤 옵션을 주면 인스턴스 생성화를 안해도 호출 가능.
+    ex: function() {
+        alert('-ex static-');
+    }
+});
+
+// #클래스 다중 상속(확장)
+var Multi = JUI.Class({
+    $mixins: [Parent, Static] // 상속받을 부모 클래스가 여러개일 경우 사용
+});
+
+var parent = new Parent();
+var child = new Child();
+
+child.test();
+Static.getInstance().ex();
+
+;(function(global, doc, core, $) {
+    'use strict';
+
+    // 의존성 모듈 사용 방법
+    // core.modules(['*'], function(Module) {}); -> 전체 선택자를 선언하면 모든 모듈을 가져온다.
+    // or
+    // core.modules(function(Module) {}); -> 배열을 생략해도 모든 모듈을 가져온다.
+    // core.modules(['fn'], function(Module) {}); -> 모듈명 선언시 해당 모듈만 가져온다.
+    core.modules(['*'], function(Module) {
+        // console.log(Module); // 의존성 모듈 객체 확인
+
+        // 클래스 jQuery 바인딩
+        core.bindjQuery(Module.highlight, 'uHighlight');
+
+        $('body').uHighlight({
+            color: 'blue',
+            backgroundColor: 'green'
+        });
+    });
+})(window, document, JUI, jQuery);
+</script>
+</body>
+</html>
