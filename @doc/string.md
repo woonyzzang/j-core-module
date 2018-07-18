@@ -6,7 +6,7 @@
 ## 목차
 
 - [trim()](#trim)
-- [replaceAll()](#replaceAll)
+- [replaceAll()](#replace-All)
 - [byteSize()](#byteSize)
 - [getFileName()](#getFileName)
 - [getFileExt()](#getFileExt)
