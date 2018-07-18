@@ -6,7 +6,7 @@
 
 ## 확장기능
 
-- [addComma()](# addComma())
+- [addComma()](# addComma)
 - [random()]()
 - [limit()]()
 - [parse()]()
