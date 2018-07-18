@@ -8,7 +8,7 @@ import {Core} from '../Core/core';
 const addonNumber = () => {
     Core.define('number', {
         /**
-         * 세자리마다 ,(콤마)를 삽입
+         * 세자릿수 마다 ,(콤마)를 삽입
          * @param {Number} value - 숫자값
          * @return {String} 세자릿수 마다 콤마 삽입 후 반환
          * @example
