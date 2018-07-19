@@ -14,8 +14,9 @@ const addonDom = () => {
          * @return {x: (*|Number), y: (*|Number)}
          * @example
          * document.getElementsByTagName('body')[0].addEventListener('click', function(e) {
-         *     console.log( Core.dom.getEventPoint(e, 'end') );
+         *     console.log( {{LIB_NAME}}.dom.getEventPoint(e, 'end') );
          * }, false);
+         * // {x: 165, y: 21}
          */
         getEventPoint: function(e, type) {
             let event = e.originalEvent || e;
@@ -39,8 +40,11 @@ const addonDom = () => {
          * @return {String} 클릭된 마우스 좌/우 버튼 문자열 반환
          * @example
          * document.getElementsByTagName('body')[0].addEventListener('mousedown', function(e) {
-         *     console.log( Core.dom.getMouseButton(e) );
+         *     console.log( {{LIB_NAME}}.dom.getMouseButton(e) );
          * }, false);
+         * // 마우스 좌측: 'left'
+         * // 마우스 휠: 'middle'
+         * // 마우스 우측: 'right'
          */
         getMouseButton: function(e) {
             let type = '';
@@ -69,11 +73,12 @@ const addonDom = () => {
          * 입력창 셀렉션 영역 캐럿 커서 위치 반환
          * @name {{LIB_NAME}}.dom.getCaretPos
          * @param {DOMSeletor} selector - DOM 셀렉터
-         * @return {begin: Number, begin: Number}
+         * @return {begin: Number, end: Number}
          * @example
          * document.getElementsByTagName('textarea')[0].addEventListener('focus', function(e) {
-         *      console.log( Core.dom.getCaretPos(this) );
+         *      console.log( {{LIB_NAME}}.dom.getCaretPos(this) );
          * }, false);
+         * // {begin: 8, end: 14}
          */
         getCaretPos: function(selector) {
             if (Core.is(selector.selectionStart, 'number')) {
@@ -116,9 +121,10 @@ const addonDom = () => {
          * 입력창 셀렉션 영역 캐럿 커서 위치 설정
          * @name {{LIB_NAME}}.dom.setCaretPos
          * @param {DOMSeletor} selector - DOM 셀렉터
+         * @param {Number} pos - 캐럿 커서 위치
          * @example
          * document.getElementsByTagName('textarea')[0].addEventListener('focus', function() {
-         *     Core.dom.setCaretPos(this, 3);
+         *     {{LIB_NAME}}.dom.setCaretPos(this, 3);
          * }, false);
          */
         setCaretPos: function(selector, pos) {
@@ -149,7 +155,7 @@ const addonDom = () => {
          * @param {DOMSeletor} child - 자식 DOM 셀렉터
          * @return {Boolean}
          * @example
-         * console.log( Core.dom.contains(document.documentElement, document.getElementsByTagName('h1')[0]) ); // true
+         * console.log( {{LIB_NAME}}.dom.contains(document.documentElement, document.getElementsByTagName('h1')[0]) ); // true
          */
         contains: function(parent, child, is) {
             if (!parent || !child) { return false; }
@@ -231,6 +237,8 @@ const addonDom = () => {
          * }, false);
          */
         addEvent: function(element, eventType, cb, isCapture) {
+            (!isCapture)? false : isCapture;
+
             if (global.addEventListener) {
                 element.addEventListener(eventType, cb, isCapture);
             } else if (global.attachEvent) {

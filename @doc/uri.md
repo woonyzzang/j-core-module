@@ -5,13 +5,13 @@
 
 ## 확장기능
 
-- [getHost()](#getHost)
-- [getPageUrl()](#getPageUrl)
-- [addParam()](#addParam)
-- [parseQuery()](#parseQuery)
-- [parseUrl()](#parseUrl)
-- [removeHash()](#removeHash)
-- [getParam()](#getParam)
+- [getHost()](#gethost)
+- [getPageUrl()](#getpageurl)
+- [addParam()](#addparam)
+- [parseQuery()](#parsequery)
+- [parseUrl()](#parseurl)
+- [removeHash()](#removehash)
+- [getParam()](#getparam)
 
 <br>
 
