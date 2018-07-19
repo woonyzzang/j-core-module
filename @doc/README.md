@@ -95,7 +95,6 @@
 - compare()
 - equalsYMD()
 - calcDate()
-- calc()
 - monthDiff()
 - daysInMonth()
 - splits()

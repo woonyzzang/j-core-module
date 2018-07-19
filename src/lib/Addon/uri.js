@@ -1,3 +1,5 @@
+import {doc} from '../config';
+
 import {Core} from '../Core/core';
 
 /**
@@ -10,7 +12,7 @@ const addonUri = () => {
          * 현재 페이지의 호스트주소를 반환
          * @returns {String}
          * @example
-         * {{LIB_NAME}}.getHost();
+         * {{LIB_NAME}}.uri.getHost(); // 'http://127.0.0.1:8080'
          */
         getHost: function() {
             const loc = doc.location;
@@ -21,7 +23,7 @@ const addonUri = () => {
          * 현재 url 반환(쿼리스트링, # 제외)
          * @returns {String}
          * @example
-         * {{LIB_NAME}}.getPageUrl();
+         * {{LIB_NAME}}.uri.getPageUrl(); // 'http://127.0.0.1:8080/'
          */
         getPageUrl: function() {
             const loc = doc.location;
@@ -30,7 +32,7 @@ const addonUri = () => {
         },
 
         /**
-         * 주어진 url에 쿼리스츠링을 조합
+         * 주어진 url에 쿼리스트링을 조합
          * @name {{LIB_NAME}}.uri.addParam
          * @param {String} url
          * @param {String|Object} string
