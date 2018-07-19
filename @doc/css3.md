@@ -85,8 +85,8 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} cssName 체크하고자 하는 css명
-@return {Boolean} 지원여부
+@param {String} | 체크하고자 하는 CSS명
+@return {Boolean} | 지원여부
 
 ```js
 {{LIB_NAME}}.css3.has('transform');
@@ -224,9 +224,9 @@ API | 설명
 API | 설명
 --- | ---
 @param {DOMSeletor} | DOM 셀렉터
-@return {Object} 좌표값
-@return {Number} Object.x: X축
-@return {Number} Object.y: Y축
+@return {Object} | 좌표값
+@return {Number} | Object.x: X축
+@return {Number} | Object.y: Y축
 
 ```js
 {{LIB_NAME}}.css3.position({selctor});
