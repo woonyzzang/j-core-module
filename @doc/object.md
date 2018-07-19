@@ -165,7 +165,7 @@ var obj = {a: 'A', b: 'B'};
 <br>
 
 ## stringify()
-객체를 문자열로 변환 합니다.(JSON을 지원하는 브라우저에서는 JSON.stringify를 사용 합니다.)
+객체를 문자열로 변환 합니다.(JSON을 지원하는 브라우저에서는 내장 JSON.stringify를 사용 합니다.)
 
 API | 설명
 --- | ---
