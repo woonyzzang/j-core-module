@@ -53,9 +53,9 @@ API | 설명
 
 API | 설명
 --- | ---
-* @param {Date} | 포맷 날짜
-* @param {String} | 포맷 문자열
-* @return {String} | 변환된 문자열
+@param {Date} | 포맷 날짜
+@param {String} | 포맷 문자열
+@return {String} | 변환된 문자열
 
 ```js
 // ex) 2015-04-07 15:03:45
@@ -297,7 +297,7 @@ API | 설명
 @return {Number} | Object.hours: 시
 @return {Number} | Object.days: 일
 @return {Number} | Object.weeks: 주
-@return {Number} | Object.diff
+@return {Number} | Object.diff: 비교
 
 ```js
 {{LIB_NAME}}.date.diff(new Date, new Date(new Date() - 51811));
