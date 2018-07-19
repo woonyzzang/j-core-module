@@ -1,5 +1,5 @@
 # 코어 라이브러리
-코어 라이브러리를 사용하면 아래 목록의 확장 기능들을 사용하여 어플리케이션 개발이 가능 합니다.
+코어 라이브러리를 사용하면 네이티브 자바스크립트 내장 객체에서 지원하지 않는 확장 기능들을 사용하여 어플리케이션 개발이 가능 합니다.
 
 ## [Collections](collection.md)
 > 기본 코어 컬렉션 기능
@@ -170,26 +170,7 @@
 ## [Utility](util.md)
 > 유틸 관련 코어 확장 기능
 
-- browser.isTouch
-- browser.isRetina
-- browser.isMobile
-- browser.isMac
-- browser.isLinux
-- browser.isWin
-- browser.is64Bit
-- browser.isIE
-- browser.ieVersion
-- browser.isOpera
-- browser.isChrome
-- browser.isSafari
-- browser.isWebKit
-- browser.isGecko
-- browser.isIETri4
-- browser.isAir
-- browser.isIOS
-- browser.isAndroid
-- browser.iosVersion
-- browser.androidVersion
+- browser
 - delayRun()
 - getUniqId()
 - nextSeq()
