@@ -9,7 +9,7 @@
 - [random()](#random)
 - [limit()](#limit)
 - [parse()](#parse)
-- [toKor()](#toKor)
+- [toKor()](#tokor)
 
 <br>
 
