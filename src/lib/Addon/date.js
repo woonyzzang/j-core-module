@@ -187,8 +187,8 @@ const addonDate = () => {
              * @param {Date} end - 만료일시
              * @return {Boolean} 두날짜 사이에 있는지 여부
              * @example
-             * {{LIB_NAME}}.date.between('2014-09-12', '2014-09-11', '2014=09-12'); // true
-             * {{LIB_NAME}}.date.between('2014-09-12', '2014-09-11', '2014=09-11'); // false
+             * {{LIB_NAME}}.date.between('2014-09-12', '2014-09-11', '2014-09-12'); // true
+             * {{LIB_NAME}}.date.between('2014-09-12', '2014-09-11', '2014-09-11'); // false
              */
             between: function(date, start, end) {
                 if (!date.getDate) { date = Core.date.parse(date); }
@@ -441,7 +441,7 @@ const addonDate = () => {
             isLeapYear: function(y) {
                 if (Object.prototype.toString.call(y) === '[object Date]') { y = y.getUTCFullYear(); }
 
-                return (( y % 4 === 0 ) && ( y % 100 !== 0 )) || ( y % 400 === 0 );
+                return ((y % 4 === 0) && (y % 100 !== 0)) || (y % 400 === 0);
             },
 
             /**
@@ -490,9 +490,11 @@ const addonDate = () => {
             /**
              * 주어진 두 날짜 중에서 작은값 반환
              * @name {{LIB_NAME}}.date.min
-             * @param {Date} a
-             * @param {Date} b
-             * @return {Date}
+             * @param {Date} a - 날짜1
+             * @param {Date} b - 날짜2
+             * @return {Date} 작은값 날짜
+             * @example
+             * {{LIB_NAME}}.date.min(new Date(2014, 5, 10), new Date(2018, 7, 19)); // Tue Jun 10 2014 00:00:00 GMT+0900 (한국 표준시)
              */
             min: function(a, b) {
                 return new Date(Math.min(this.parse(a), this.parse(b)));
@@ -501,9 +503,11 @@ const addonDate = () => {
             /**
              * 주어진 두 날짜 중에서 큰값 반환
              * @name {{LIB_NAME}}.date.max
-             * @param {Date} a
-             * @param {Date} b
-             * @return {Date}
+             * @param {Date} a - 날짜1
+             * @param {Date} b - 날짜2
+             * @return {Date} 큰값 날짜
+             * @example
+             * {{LIB_NAME}}.date.max(new Date(2014, 5, 10), new Date(2018, 7, 19)); // Sun Aug 19 2018 00:00:00 GMT+0900 (한국 표준시)
              */
             max: function(a, b) {
                 return new Date(Math.max(this.parse(a), this.parse(b)));
@@ -523,7 +527,7 @@ const addonDate = () => {
              * @return {Number} dates.sec 초
              * @return {Number} dates.ms 밀리초
              * @example
-             * {{LIB_NAME}}.date.normalize(0, 0, 120, 0) // {day:0, hour: 0, min: 2, sec: 0, ms: 0} // 즉, 120초가 2분으로 변환
+             * {{LIB_NAME}}.date.normalize(0, 0, 120, 0); // {day:0, hour: 0, min: 2, sec: 0, ms: 0} // 즉, 120초가 2분으로 변환
              */
             normalize: function(h, M, s, ms) {
                 h = h || 0;
