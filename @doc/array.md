@@ -293,7 +293,7 @@ API | 설명
 --- | ---
 @param {Array} | 배열1
 @param {Array} | 배열2
-@returns {Array} 차집합 배열
+@returns {Array} | 차집합 배열
 
 ```js
 {{LIB_NAME}}.array.different([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]);
@@ -310,7 +310,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {Array} | array
+@param {Array} | 배열
 @return {number} | 합산 값
 
 ```js
@@ -328,7 +328,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {...any} value 배열로 변환하고자 하는 값
+@param {...any} | 배열로 변환하고자 하는 값
 @return {Array} | 변환된 배열
 
 ```js

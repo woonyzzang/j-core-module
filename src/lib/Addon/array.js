@@ -317,7 +317,7 @@ const addonArray = () => {
             /**
              * 배열요소들의 합을 반환
              * @name {{LIB_NAME}}.array.sum
-             * @param {Array} array
+             * @param {Array} array - 배열
              * @return {number}
              * @example
              * {{LIB_NAME}}.array.sum([1, 2, 3]); // 6
