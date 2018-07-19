@@ -5,8 +5,6 @@
 > 기본 코어 컬렉션 기능
 
 - debug
-    - log()
-    - logs()
 - each()
 - reverse()
 - extend()
