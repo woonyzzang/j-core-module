@@ -149,7 +149,7 @@ API | 설명
 --- | ---
 @param {Object} | 객체
 @param {String} | 삭제할 키값
-@return 지정한 요소가 삭제된 객체
+@return | 지정한 요소가 삭제된 객체
 
 ```js
 var obj = {a: 'A', b: 'B'};
