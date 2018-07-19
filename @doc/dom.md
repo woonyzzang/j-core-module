@@ -26,8 +26,8 @@ API | 설명
 @param {Event} | 이벤트 객체
 @param {String} | mouseend나 touchend 이벤트일때 'end'를 넘겨주면 좀더 정확한 값이 반환된다.
 @return {Object} | 이벤트 좌표값
-@return {Number} | Object.x: 가로
-@return {Number} | Object.y: 세로
+@return {Number} | Object.x: X축
+@return {Number} | Object.y: Y축
 
 ```js
 document.getElementsByTagName('body')[0].addEventListener('click', function(e) {

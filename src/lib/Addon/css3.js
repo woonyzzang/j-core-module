@@ -49,7 +49,7 @@ const addonCss3 = () => {
              * @return {String}
              * @example
              * {{LIB_NAME}}.css3.prefix('transition'); // webkitTransition
-             * {element}.style[prefixStyle('transform')] = 'translate(10px 0)';
+             * {element}.style[{{LIB_NAME}}.css3.prefix('transform')] = 'translate(50px, 100px)';
              */
             prefix: prefixStyle,
 
@@ -67,7 +67,7 @@ const addonCss3 = () => {
              * @name {{LIB_NAME}}.css3.support3D
              * @return {Boolean}
              * @example
-             * if ({{}}.css3.support3D) {} // css3 3d 지원 여부 확인
+             * if ({{LIB_NAME}}.css3.support3D) {} // css3 3d 지원 여부 확인
              */
             support3D: (function () {
                 let body = doc.getElementsByTagName('body')[0],
@@ -250,7 +250,7 @@ const addonCss3 = () => {
             /**
              * css3로 움직여주는 함수
              * @name {{LIB_NAME}}.css3.move
-             * @param {DOMSelector} selector - 대상요소
+             * @param {DOMSelector} selector - DOM 셀렉터
              * @param {Number|String} x
              * @param {Nymber|String} y
              * @param {Float} dur
@@ -273,9 +273,9 @@ const addonCss3 = () => {
             },
 
             /**
-             * css3로 움직여주는 함수
+             * css3로 움직여주는 애니메이션 함수
              * @name {{LIB_NAME}}.css3.animate
-             * @param {DOMSelector} selectors - 대상요소들
+             * @param {DOMSelector} selectors - DOM 셀렉터
              * @param {Number|String} x
              * @param {Number|String} y
              * @param {Float} dur

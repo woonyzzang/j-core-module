@@ -135,17 +135,17 @@
 > CSS3 관련 코어 확장 기능
 
 - prefix()
-- support()
-- support3D()
+- support
+- support3D
 - has()
-- transform()
-- transitionTimingFunction()
-- transitionDuration()
-- transitionDelay()
-- transformOrigin()
-- transition()
-- translateZ()
-- transitionEnd()
+- transform
+- transitionTimingFunction
+- transitionDuration
+- transitionDelay
+- transformOrigin
+- transition
+- translateZ
+- transitionEnd
 - position()
 - move()
 - animate()
