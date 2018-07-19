@@ -175,7 +175,7 @@ API | 설명
 --- | ---
 @param {Array} | 배열
 @param {...any} | 찾을 값
-@return {Boolean} 존재 유뮤 체크
+@return {Boolean} 매칭된 값 있는지 여부
 
 ```js
 {{LIB_NAME}}.array.include([1, '일', 2, '이', 3, '삼'], '삼');

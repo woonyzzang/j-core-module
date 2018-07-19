@@ -1,4 +1,6 @@
+import {global} from '../config';
 import {Core} from '../Core/core';
+import {isPlainObject} from '../Native/isPlainObject';
 
 /**
  * JSON객체 관련 유틸함수
@@ -8,7 +10,7 @@ import {Core} from '../Core/core';
 const addonObject = () => {
     Core.define('object', {
         /**
-         * 개체의 열거가능한 속성 및 메서드 이름을 배열로 반환
+         * 객체의 열거가능한 속성 및 메서드 이름을 배열로 반환
          * @name {{LIB_NAME}}.object.keys
          * @param {Object} obj - 리터럴 객체
          * @return {Array} 객체의 열거가능한 속성의 이름이 포함된 배열
@@ -50,7 +52,7 @@ const addonObject = () => {
          * @param {Function(value, index)} cb - 콜백함수
          * @return {Object}
          * @example
-         * scui.object.map({1; 'one', 2: 'two', 3: 'three'}, function(item, key) {
+         * {{LIB_NAME}}.object.map({1; 'one', 2: 'two', 3: 'three'}, function(item, key) {
          *     return item + '__';
          * });
          * // {1: 'one__', 2: 'two__', 3: 'three__'}
@@ -74,7 +76,7 @@ const addonObject = () => {
          * @return {Boolean} 요소가 하나라도 있는지 여부
          * @example
          * var obj1 = {};
-         * var obj2 = {a: 'A'}
+         * var obj2 = {a: 'A'};
          * {{LIB_NAME}}.object.hasObject(obj1); // false
          * {{LIB_NAME}}.object.hasObject(obj2); // true
          */
@@ -98,6 +100,7 @@ const addonObject = () => {
          * @return {String} 결과 문자열 반환
          * @example
          * {{LIB_NAME}}.object.toQueryString({a:1, b: 2, c: {d: 4}}); // 'a=1&b=2&c[d]=4'
+         * {{LIB_NAME}}.object.toQueryString({google:'https://www.google.co.kr/'}, true); // 'google=https%3A%2F%2Fwww.google.co.kr%2F'
          */
         toQueryString: function(params, isEncode) {
             if (typeof params === 'string') { return params; }
@@ -127,7 +130,7 @@ const addonObject = () => {
         /**
          * 주어진 json를 키와 요소를 맞바꿔주는 함수
          * @name {{LIB_NAME}}.object.traverse
-         * @param {Array} obj - 배열
+         * @param {Object} obj - 객체
          * @return {Object}
          * @example
          * {{LIB_NAME}}.object.traverse({1:'a', 2:'b', 3:'c', 4:'d'});
@@ -175,9 +178,9 @@ const addonObject = () => {
          * @param {String} [pad = ''] - 기호와 문자간의 간격
          * @return {String}
          * @example
-         * {{LIB_NAME}}.object.stringify({a: 'A'});
+         * {{LIB_NAME}}.object.stringify({a: 'A'}); // '{"a": "A"}'
          */
-        stringify: function(val, opts, pad) {
+        stringify: (global.JSON)? JSON.stringify : function(val, opts, pad) {
             let cache = [];
 
             return (function stringify(val, opts, pad) {
@@ -193,8 +196,8 @@ const addonObject = () => {
 
                 if (typeof val === 'number' ||
                     typeof val === 'boolean' ||
-                    typeof val === null ||
-                    typeof val === 'undefined') {
+                    val === null ||
+                    val === undefined) {
                     return val;
                 }
 
@@ -204,7 +207,7 @@ const addonObject = () => {
                 if (Core.is(val, 'array')) {
                     if (Core.isEmpty(val)) { return '[]'; }
 
-                    return '[' + opts.nr + core.array.map(val, function(el, i) {
+                    return '[' + opts.nr + Core.array.map(val, function(el, i) {
                         const eol = (val.length - 1 === i)? opts.nr : ', ' + opts.nr;
 
                         return pad + opts.indent + stringify(el, opts, pad + opts.indent) + eol;
