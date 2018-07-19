@@ -65,16 +65,14 @@ const addonArray = () => {
             /**
              * 반복자함수의 반환값이 true가 아닐 때까지 반복
              * @name {{LIB_NAME}}.array.every
-             * @function
              * @param {Array} array - 배열
              * @param {ArrayCallback} cb - 함수
              * @return {Boolean} 최종 결과
              * @example
-             * var sum = 0;
              * {{LIB_NAME}}.array.every([1, 3, 5, 7], function(value) {
              *     return value > 5;
              * });
-             * // 9
+             * // false
              */
             every: nativeCall(Array.prototype.every) || function(array, cb, context) {
                 let isTrue = true;
@@ -91,16 +89,14 @@ const addonArray = () => {
             /**
              * 반복자함수의 반환값이 true일 때까지 반복
              * @name {{LIB_NAME}}.array.any
-             * @function
              * @param {Array} array 배열
-             * @param {ArrayCallback} cb 함수
+             * @param {ArrayCallback} cb 콜백함수
              * @return {Boolean} 최종 결과
              * @example
-             * var sum = 0;
              * {{LIB_NAME}}.array.any([1, 3, 5, 7], function(val) {
              *     return val < 5;
              * });
-             * // 4
+             * // true
              */
             any: nativeCall(Array.prototype.any) || function(array, cb, context) {
                 let isTrue = false;
