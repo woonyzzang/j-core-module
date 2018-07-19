@@ -25,9 +25,9 @@ API | 설명
 --- | ---
 @param {Event} | 이벤트 객체
 @param {String} | mouseend나 touchend 이벤트일때 'end'를 넘겨주면 좀더 정확한 값이 반환된다.
-@return {Object} | 좌표값
-@return {Number} | Object.x: 가로 좌표
-@return {Number} | Object.y: 세로 좌표
+@return {Object} | 이벤트 좌표값
+@return {Number} | Object.x: 가로
+@return {Number} | Object.y: 세로
 
 ```js
 document.getElementsByTagName('body')[0].addEventListener('click', function(e) {
@@ -69,9 +69,9 @@ document.getElementsByTagName('body')[0].addEventListener('mousedown', function(
 API | 설명
 --- | ---
 @param {DOMSeletor} | DOM 셀렉터
-@return {Object}
-@return {Number} | Object.begin: 셀렉션 영역 시작
-@return {Number} | Object.end: 셀렉션 영역 마지막
+@return {Object} | 셀렉션 영역 캐럿 커서 위치
+@return {Number} | Object.begin: 시작
+@return {Number} | Object.end: 마지막
 
 ```js
 document.getElementsByTagName('textarea')[0].addEventListener('focus', function(e) {
