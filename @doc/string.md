@@ -35,7 +35,7 @@
 
 API | 설명
 --- | ---
-@param {String} value | 문자값
+@param {String} | 문자값
 @return {String} | 공백 제거 후 문자 반환
 
 ```js
@@ -53,7 +53,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 교체를 수행할 문자열
+@param {String} | 교체를 수행할 문자열
 @param {RegExp or String} | find 검색할 문자열이나 정규식 패턴
 @param {String} rep | 대체할 문자열
 @return {String} | 대체된 결과 문자열
@@ -73,7 +73,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 길이를 계산할 문자열
+@param {String} | 길이를 계산할 문자열
 @return {Number} | 문자열 바이트 반환
 
 ```js
@@ -91,7 +91,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} str | path경로
+@param {String} | path경로
 @return {String} | 경로가 제거된 파일명 반환
 
 ```js
@@ -109,7 +109,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} fname | path문자열
+@param {String} | path문자열
 @return {String} | 경로가 제거된 확장자 반환
 
 ```js
@@ -127,9 +127,9 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
-@param {Number} length | 잘라낼 길이
-@param {String='...'} [truncation = '...'] | 꼬리글
+@param {String} | 문자열
+@param {Number} | 잘라낼 길이
+@param {String} | 꼬리글
 @return {String} | 결과 문자열 반환
 
 ```js
@@ -147,9 +147,9 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
-@param {Number} length | 잘라낼 길이
-@param {String='...'} [truncation = '...'] | 꼬리글
+@param {String} | 문자열
+@param {Number} | 잘라낼 길이
+@param {String} | 꼬리글
 @return {String} | 결과 문자열 반환
 
 ```js
@@ -167,8 +167,8 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
-@param {Number} length | 제한 문자수
+@param {String} | 문자열
+@param {Number} | 제한 문자수
 @return {Number} | 결과 문자열에 해당하는 char index 반환
 
 ```js
@@ -186,7 +186,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
+@param {String} | 문자열
 @return {String} | 결과 문자열
 
 ```js
@@ -204,7 +204,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
+@param {String} | 문자열
 @returns {String} | 결과 문자열
 
 ```js
@@ -222,7 +222,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
+@param {String} | 문자열
 @return {String} | 결과 문자열
 
 ```js
@@ -240,7 +240,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
+@param {String} | 문자열
 @return {String} | 결과 문자열
 
 ```js
@@ -258,8 +258,8 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 문자열
-@param {Number} cnt | 반복 횟수
+@param {String} | 문자열
+@param {Number} | 반복 횟수
 @return {String} | 결과 문자열
 
 ```js
@@ -277,7 +277,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | 특수기호
+@param {String} | 특수기호
 @return {String} | 결과 문자열
 
 ```js
@@ -295,7 +295,7 @@ HTML ENTITY로 변환된 문자열을 원래 특수기호로 변환 합니다.
 
 API | 설명
 --- | ---
-@param {String} value | 특수기호
+@param {String} | 특수기호
 @return {String} | 결과 문자열
 
 ```js
@@ -309,13 +309,13 @@ API | 설명
 <br>
 
 ## toggle()
-value === these 이면 other 를,  value !== these 이면 value 를 반환 합니다.
+현재 상태값을 첫번째, 두번째 상태값과 비교 후 반대인 값을 반환 합니다.
 
 API | 설명
 --- | ---
-@param {String} value | 현재 상태값
-@param {String} these | 첫번째 상태값
-@param {String} other | 두번째 상태값
+@param {String} | 현재 상태값
+@param {String} | 첫번째 상태값
+@param {String} | 두번째 상태값
 @return {String} | 토글된 상태값 반환
 
 ```js
@@ -339,8 +339,8 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} format | 문자열
-@param {String|Object} val | 대체할 문자열
+@param {String} | 문자열
+@param {String or Object} | 대체할 문자열
 @return {String} | 결과 문자열
 
 ```js
@@ -363,7 +363,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} value | HTML 특수기호
+@param {String} | HTML 특수기호
 @return {String} | HTML 엔티티코드 반환
 
 ```js
@@ -381,7 +381,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {Number} len | 길이
+@param {Number} | 길이
 @return {String} | 랜덤문자열 반환
 
 ```js
@@ -399,7 +399,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {string} value | 문자열
+@param {string} | 문자열
 @return {string} | 태그가 제거된 문자열
 
 ```js
@@ -417,8 +417,8 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {string} value | 문자열
-@param {string} type | 옵션 구분자 ('ONLY' or 'INCLUDE')
+@param {string} | 문자열
+@param {string} | 옵션 구분자 ('ONLY' or 'INCLUDE')
 @return {boolean} | 결과값
 
 ```js
