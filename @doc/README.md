@@ -28,7 +28,7 @@
 - toKor()
 
 ## [Strings](string.md)
-> 문자열 관련 코어 확장 기능
+> 문자 관련 코어 확장 기능
 
 - trim()
 - replaceAll()
@@ -118,6 +118,20 @@
 - removeHash()
 - getParam()
 
+## [dom](dom.md)
+> DOM 관련 코어 확장 기능
+
+- getEventPoint()
+- getMouseButton()
+- getCaretPos()
+- setCaretPos()
+- contains()
+- addClass()
+- removeClass()
+- hasClass()
+- toggleClass()
+- addEvent()
+
 ## [css3](css3.md)
 > CSS3 관련 코어 확장 기능
 
@@ -137,20 +151,6 @@
 - move()
 - animate()
 - transitionStyle()
-
-## [dom](dom.md)
-> DOM 관련 코어 확장 기능
-
-- getEventPoint()
-- getMouseButton()
-- getCaretPos()
-- setCaretPos()
-- contains()
-- addClass()
-- removeClass()
-- hasClass()
-- toggleClass()
-- addEvent()
 
 ## [cookie](cookie.md)
 > 쿠키 관련 코어 확장 기능
