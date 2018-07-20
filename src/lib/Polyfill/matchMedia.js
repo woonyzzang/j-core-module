@@ -5,6 +5,7 @@ import {doc} from '../config';
  * @description 미디어쿼리 폴리필 기능 지원
  * https://github.com/paulirish/matchMedia.js/
  * https://gist.github.com/benplum/8045336 // IE8 대응
+ * @param {String} mediaQuery - CSS 미디어 쿼리
  * @example
  * if (matchMedia('only screen and (max-width: 480px)').matches) {
  *    // smartphone/iphone... maybe run some small-screen related dom scripting?

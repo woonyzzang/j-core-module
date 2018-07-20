@@ -183,4 +183,14 @@
 - get()
 - set()
 
+## [Polyfill](polyfill.md)
+> 폴리필 관련 가능 (파편화된 환경들에서 유사한 동작 기능 지원)
+
+- querySelector()
+- querySelectorAll()
+- getElementsByClassName()
+- bind()
+- template()
+- matchMedia()
+
 ## 각주

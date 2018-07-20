@@ -3,6 +3,7 @@ import {global, doc} from '../config';
 /**
  * @name querySelectorAllPolyfill
  * @description 쿼리 전체 셀렉터 폴리필 기능 지원
+ * @param {DOMSeletor} selector - DOM 셀렉터
  * @example
  * document.querySelectorAll('a');
  */

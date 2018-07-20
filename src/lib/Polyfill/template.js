@@ -6,9 +6,21 @@ import {doc} from '../config';
  * @example
  * // Shim so we can style in IE6/7/8
  * 1. CSS안에 template{display:none} 선언
+ * <style>template{display:none}</style>
  * 2. HTML 안에 <template>를 렌더링 하기전 head안의 스크립트 선언
  * <head>
  * <script>document.createElement('template');</script>
+ * </head>
+ * 3. BODY 안에 탬플릿 엘리먼트 사용
+ * <body>
+ * <template id="example">
+ *     <h1>This is template content.</h1>
+ *     <p>Its really great.</p>
+ * </template>
+ * <div id="target">
+ *     <p>This is regular old content.</p>
+ * </div>
+ * </body>
  *
  * @example
  * var $template = document.getElementsByTagName('template')[0];

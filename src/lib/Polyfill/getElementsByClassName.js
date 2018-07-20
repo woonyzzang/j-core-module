@@ -3,6 +3,7 @@ import {doc} from '../config';
 /**
  * @name getElementsByClassNamePolyfill
  * @description 클래스 셀렉터 폴리필 기능 지원
+ * @param {DOMSeletor} selector - DOM 셀렉터 (class명)
  * @example
  * document.getElementsByClassName('tab_menu');
  */

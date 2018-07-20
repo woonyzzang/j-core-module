@@ -3,12 +3,14 @@ import {global} from '../config';
 /**
  * @name bindPolyfill
  * @description 바인드 폴리필 기능 지원
+ * @param {Object} obj - 바인딩 객체 데이터
  * @example
  * function Test() {
  *      alert(this.name);
  * }
  *
- * Test.bind({name: 'axl rose'})(); -> alert('axl rose');
+ * Test.bind({name: 'axl rose'})();
+ * // 'axl rose';
  */
 export default () => {
     if (typeof Function.prototype.bind === 'undefined') {
