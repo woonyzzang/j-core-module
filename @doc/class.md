@@ -30,7 +30,28 @@ var parent = new Parent(); // 인스턴스 클래스 생성
 
 <br>
 
-### 1. 상속 패턴
+### 1. 멤버 메서드 추가
+클래스에 동적으로 프로퍼티나 메서드 추가 시 `members()` 함수안에 선언하면 추가 할 수 있습니다.
+
+```js
+var Person = {{LIB_NAME}}.Class({
+    _constructor: function() {}
+});
+
+Person.members({
+    newFunc: function() {
+        console.log('newFunc');
+    }
+});
+
+var person = new Person();
+
+person.newFunc();
+
+// newFunc'
+```
+
+### 2. 상속 패턴
 상속 옵션을 사용하면 부모클래스의 프로퍼티 및 메서드 기능을 상속받아 자식 클래스에서도 사용 할 수 있습니다. 동일한 프로퍼티나 메서드명일 시 오버라이딩 합니다.
 
 옵션 | 설명
@@ -63,7 +84,7 @@ child.run(); // 자식메서드 호출
 // 'Child run'
 ```
 
-### 1-1. 상속 패턴 > 부모클래스의 동일 메서드 호출
+### 2-1. 상속 패턴 > 부모클래스의 동일 메서드 호출
 상속 받은 자식 클래스에서 `this.supr()` 호출하면 동일한 부모 클래스의 메서드를 사용 할 수 있습니다.
 
 ```js
@@ -92,8 +113,7 @@ child.run();
 // 'Child run'
 ```
 
-
-### 1-2. 상속 패턴 > 부모클래스의 다른 메서드 호출
+### 2-2. 상속 패턴 > 부모클래스의 다른 메서드 호출
 상속 받은 자식 클래스에서 `this.suprMethod({메서드명})` 호출하면 부모 클래스의 특정 메서드를 사용 할 수 있습니다.
 
 ```js
@@ -124,7 +144,7 @@ child.run();
 
 <br>
 
-### 2. 믹스인 패턴
+### 3. 믹스인 패턴
 여러 다중 클래스를 mixins방식으로 병합 합니다. 여러 클래스 기능 확장 시 유용합니다.
 
 옵션 | 설명
@@ -160,7 +180,7 @@ person[1].funcB();
 
 <br>
 
-### 3. 싱글톤 패턴
+### 4. 싱글톤 패턴
 싱글톤 옵션을 사용하면 인스턴스 클래스 생성없이 바로 메소드 호출이 가능합니다. 반복적으로 재사용으로 사용할 클래스가 아닐경우 사용을 권장합니다.
 
 옵션 | 설명
@@ -182,7 +202,7 @@ Parent.getInstance().show();
 
 <br>
 
-### 4. 정적 스태틱 패턴
+### 5. 정적 스태틱 패턴
 스태틱 옵션을 사용하면 클래스 인스턴스 생성자 선언 없이 바로 프로퍼티나 메소드 사용이 가능합니다.
 
 옵션 | 설명
@@ -201,29 +221,6 @@ var Parent = {{LIB_NAME}}.Class({
 Parent.live();
 
 // live
-```
-
-<br>
-
-### 5. 멤버 메서드 추가
-클래스에 동적으로 프로퍼티나 메서드 추가 시 `members()` 함수안에 선언하면 추가 할 수 있습니다.
-
-```js
-var Person = {{LIB_NAME}}.Class({
-    _constructor: function() {}
-});
-
-Person.members({
-    newFunc: function() {
-        console.log('newFunc');
-    }
-});
-
-var person = new Person();
-
-person.newFunc();
-
-// newFunc'
 ```
 
 [▲ 확장기능 목록 이동](#확장기능)
