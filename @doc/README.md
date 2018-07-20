@@ -4,13 +4,14 @@
 > 기본 코어 기능
 
 - name
-- ver
+- version
 - debug
 - each()
 - reverse()
 - extend()
 - clone()
 - emptyFn
+- noConflict()
 - tmpInput
 - tmpNode
 - is()

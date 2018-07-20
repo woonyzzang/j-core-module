@@ -6,7 +6,7 @@
 ## 기본기능
 
 - [name](#name)
-- [ver](#ver)
+- [version](#version)
 - [debug](#debug)
     - log()
     - logs()
@@ -15,6 +15,7 @@
 - [extend()](#extend)
 - [clone()](#clone)
 - [emptyFn](#emptyfn)
+- [noConflict()](#noconflict)
 - [tmpInput](#tmpinput)
 - [tmpNode](#tmpnode)
 - [is()](#is)
@@ -39,8 +40,10 @@
 
 <br>
 
-## ver
+## version
 코어 버전을 가져옵니다.
+
+`Alias: ver`
 
 ```js
 {{LIB_NAME}}.ver;
@@ -194,6 +197,19 @@ console.log(obj.fun1);
 
 console.log(obj.fun2);
 // function() {}
+```
+
+[▲ 기본기능 목록 이동](#기본기능)
+
+<br>
+
+## noConflict()
+코어 네이밍 식별자를 변경 합니다. (다른 자바스크립트 프레임워크 네이밍 충돌 방지)
+
+```js
+var JUILIB = {{LIB_NAME}}.noConflict();
+
+console.log(JUILIB);
 ```
 
 [▲ 기본기능 목록 이동](#기본기능)

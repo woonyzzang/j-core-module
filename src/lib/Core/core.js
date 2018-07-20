@@ -24,12 +24,25 @@ let Core = global[core] || (global[core] = {});
 /** 라이브러리 기본 코어 */
 extend(Core, {
     constructor: core, // 생성자(프레임워크) 이름
+    version: 'v1.0.0',
     debug: debug, // 디버깅 로그
     each: each, // 반복함수
     reverse: reverse, // 역순 반복함수
     extend: extend, // 객체 병합함수
     clone: clone, // 객체 복제함수
     emptyFn: function() {}, // 빈 함수
+
+    /**
+     * 코어 네이밍 식별자 변경 (다른 자바스크립트 프레임워크 네이밍 충돌 방지)
+     * @name {{LIB_NAME}}.noConflict
+     * @example
+     * var JUILIB = {{LIB_NAME}}.noConflict();
+     */
+    noConflict: function() {
+        global[core] = undefined;
+
+        return this;
+    },
 
     /**
      * 특정속성을 지원하는지 체크하기 위한 엘리먼트
@@ -231,7 +244,7 @@ extend(Core, {
 
 /** 코어 별칭 */
 Core.name = Core.constructor;
-Core.ver = 'v1.0.0';
+Core.ver = Core.version;
 Core.ns = Core.namespace;
 Core.modules = Core.dependency;
 Core.module = Core.dependency.module = {};
