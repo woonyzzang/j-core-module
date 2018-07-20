@@ -9,7 +9,7 @@
 - [querySelectorAll()](#queryselectorall)
 - [getElementsByClassName()](#getelementsbyclassname)
 - [bind()](#bind)
-- [<template>](#<template>)
+- [template](#template)
 - [matchMedia()](#matchmedia)
 
 <br>
@@ -90,7 +90,7 @@ Test.bind({name: 'axl rose'})();
 
 <br>
 
-## <template>
+## template
 HTML5 템플릿 엘리먼트 폴리필 기능을 지원 합니다.
 
 ```js
