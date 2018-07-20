@@ -76,6 +76,7 @@ document.querySelectorAll('a');
 // <a> 엘리먼트 전체 선택
 ```
 ```js
+// document.querySelectorAll('a')[index];
 document.querySelectorAll('a')[0];
 
 // <a> 엘리먼트 첫번째 선택
