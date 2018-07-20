@@ -35,7 +35,7 @@ var parent = new Parent(); // 인스턴스 클래스 생성
 
 옵션 | 설명
 --- | ---
-$extend {Object} | 부모 클래스명
+$extend {Object} | 부모 클래스명 (optional)
 
 ```js
 var Parent = {{LIB_NAME}}.Class({
@@ -129,7 +129,7 @@ child.run();
 
 옵션 | 설명
 --- | ---
-$mixins {Array} | 부모 클래스명
+$mixins {Array} | 부모 클래스명 (optional)
 
 ```js
 var A = {{LIB_NAME}}.Class({
@@ -187,7 +187,7 @@ Parent.getInstance().show();
 
 옵션 | 설명
 --- | ---
-$statics {Object} | 정적 프로퍼티 or 정적 메서드
+$statics {Object} | 정적 프로퍼티 or 정적 메서드 (optional)
 
 ```js
 var Parent = {{LIB_NAME}}.Class({
