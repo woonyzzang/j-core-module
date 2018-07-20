@@ -10,11 +10,11 @@
 
 // import {global, doc, LIB_NAME as core} from './lib/config';
 
+import templatePolyfill from './lib/Polyfill/template';
 import querySelectorPolyfill from './lib/Polyfill/querySelector';
 import querySelectorAllPolyfill from './lib/Polyfill/querySelectorAll';
 import getElementsByClassNamePolyfill from './lib/Polyfill/getElementsByClassName';
 import bindPolyfill from './lib/Polyfill/bind';
-import templatePolyfill from './lib/Polyfill/template';
 import matchMediaPolyfill from './lib/Polyfill/matchMedia';
 // import matchMediaAddListenerPolyfill from './lib/Polyfill/matchMediaAddListener'; // IE11 에러
 // import picturePolyfill from './lib/Polyfill/picture'; // IE8 에러
@@ -35,11 +35,11 @@ import {addonEnv} from './lib/Addon/env';
 
 /** 폴리필 */
 // https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
+templatePolyfill();
 querySelectorPolyfill();
 querySelectorAllPolyfill();
 getElementsByClassNamePolyfill();
 bindPolyfill();
-templatePolyfill();
 matchMediaPolyfill();
 // matchMediaAddListenerPolyfill();
 // picturePolyfill();

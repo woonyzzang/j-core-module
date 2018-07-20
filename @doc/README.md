@@ -186,11 +186,11 @@
 ## [Polyfill](polyfill.md)
 > 폴리필 관련 기능 (파편화된 환경들에서 유사한 동작 기능 지원)
 
+- template
 - querySelector()
 - querySelectorAll()
 - getElementsByClassName()
 - bind()
-- template()
 - matchMedia()
 
 ## 각주
