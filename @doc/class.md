@@ -5,8 +5,7 @@
 
 ## 확장기능
 
-- [set()](#set)
-- [get()](#get)
+- [Class()](#class)
 
 <br>
 
