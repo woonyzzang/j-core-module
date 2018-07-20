@@ -45,7 +45,7 @@ extend(Core, {
      * 특정 css스타일을 지원하는지 체크하기 위한 엘리먼트
      * @name {{LIB_NAME}}.tmpNode
      * @example
-     * if('transform' in {{LIB_NAME}}.tmpNode.style) {
+     * if ('transform' in {{LIB_NAME}}.tmpNode.style) {
      *     alert('transform를 지원합니다.');
      * }
      */
@@ -88,7 +88,7 @@ extend(Core, {
      * var obj = {a: 'A'};
      * if ({{LIB_NAME}}.hasOwn(obj, 'a')) {
      *     alert('obj객체에 a가 존재합니다.');
-     * };
+     * }
      */
     hasOwn: (obj, name) => {
         return Object.prototype.hasOwnProperty.call(obj, name);
@@ -101,7 +101,7 @@ extend(Core, {
      * @param {Object|Function} [obj] - 지정된 네임스페이스에 등록할 객체, 함수 등
      * @return {Object} 생성된 새로운 네임스페이스
      * @example
-     * {{LIB_NAME}}.namespace('app.ui.Module', Module)
+     * {{LIB_NAME}}.namespace('app.ui.Module', Module);
      * // 를 native로 풀면,
      * var app = {
      *     ui: {
@@ -150,7 +150,7 @@ extend(Core, {
      * };
      *
      * // 추가된 모듈 사용
-     * {{LIB_NAME}}.dependency(['*'], function(Module) {}); //의존성 모듈 전체 사용
+     * {{LIB_NAME}}.dependency(['*'], function(Module) {}); // 의존성 모듈 전체 사용
      * {{LIB_NAME}}.dependency(function(Module) {}); // 의존성 모듈 생략 가능
      * {{LIB_NAME}}.dependency(['device', 'os'], function(Module) {
      *     console.log(Module); // {device, os} 추가한 모듈 객체가 인자로 들어온다.

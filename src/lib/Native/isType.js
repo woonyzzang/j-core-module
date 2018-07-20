@@ -9,7 +9,7 @@ import {isPlainObject} from './isPlainObject';
  * @api
  * isPlainObject(* [, typeName])
  * @example
- * isType('aaaa', 'string'); // true
+ * isType('test', 'string'); // true
  * isType(new Date(), 'date'); // true
  * isType(1, 'number'); // true
  * isType(/[a-z]/, 'regexp'); // true
@@ -19,15 +19,15 @@ import {isPlainObject} from './isPlainObject';
  * isType(NaN, 'nan'); // true
  * isType(null, 'null'); // true
  * // 파라미터를 하나만 넘기면 타입명을 반환받을 수 있다.
- * isType('') // "string"
- * isType(null) //"null"
- * isType(1) //"number"
- * isType({}) //"object"
- * isType([]) // "array"
- * isType(undefined) // "undefined"
- * isType(new Date()) // "date"
- * isType(/[a-z]/) // "regexp"
- * isType(document.body) //"element"
+ * isType(''); // 'string'
+ * isType(null); // 'null'
+ * isType(1); // 'number'
+ * isType({}); // 'object'
+ * isType([]); // 'array'
+ * isType(undefined); // 'undefined'
+ * isType(new Date()); // 'date'
+ * isType(/[a-z]/); // 'regexp'
+ * isType(document.body); // 'element'
  */
 const isType = (value, typeName) => {
     const isGet = arguments.length === 1;

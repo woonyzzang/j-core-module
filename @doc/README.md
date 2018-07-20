@@ -1,4 +1,4 @@
-## [Collections](collection.md)
+## [Core](core.md)
 > 기본 코어 기능
 
 - debug

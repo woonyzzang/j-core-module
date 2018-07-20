@@ -1,3 +1,5 @@
+import {isArray} from './isArray';
+
 /**
  * reverse
  * @description 역순 반복 함수(배열 타입만 유효)
