@@ -26,7 +26,7 @@
     - iosVersion
     - androidVersion
 - [delayRun()](#delayrun)
-- [getUniqId()](#getUniqid)
+- [getUniqId()](#getuniqid)
 - [nextSeq()](#nextseq)
 - [template()](#template)
 
