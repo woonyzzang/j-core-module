@@ -400,10 +400,6 @@ API | 설명
 ## dependency()
 의존성 모듈 패턴을 추가하고 사용 합니다.
 
-`Alias: modules`
-<br>
-`Alias: modules.module`
-
 ```js
 // 모듈 추가
 {{LIB_NAME}}.dependency.module.모듈명 = function(app) {});
@@ -414,6 +410,9 @@ API | 설명
 ```
 
 ## 모듈 추가
+
+`Alias: modules()`
+
 ```js
 // device 모듈 추가
 {{LIB_NAME}}.dependency.module.device = function(app) {
@@ -435,6 +434,9 @@ API | 설명
 ```
 
 ## 추가된 모듈 사용
+
+`Alias: modules.module`
+
 ```js
 // 의존성 모듈 선언을 생략 시 전체 모듈 사용
 {{LIB_NAME}}.dependency(function(Module) {});
