@@ -3,6 +3,7 @@ import {Core} from '../Core/core';
 /**
  * @namespace
  * @name Core.Env
+ * @description 환경변수 관련 코어 확장 함수
  */
 const addonEnv = () => {
     Core.define('env', {

@@ -1,5 +1,5 @@
 /**
- * isPlainObject
+ * @name isPlainObject
  * @description Plain Object 여부 확인
  * @param {Object} value - 오브젝트 객체
  * @return {Boolean}

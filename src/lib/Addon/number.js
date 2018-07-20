@@ -1,15 +1,16 @@
 import {Core} from '../Core/core';
 
 /**
- * 숫자 관련 유틸 함수 모음
  * @namespace
  * @name Core.number
+ * @description 숫자 관련 코어 확장 함수
  */
 const addonNumber = () => {
     Core.define('number', {
         /**
-         * 세자릿수 마다 ,(콤마)를 삽입
+         * @name {{LIB_NAME}}.number.addComma
          * @param {Number} value - 숫자값
+         * @description 세자릿수 마다 ,(콤마)를 삽입
          * @return {String} 세자릿수 마다 콤마 삽입 후 반환
          * @example
          * {{LIB_NAME}}.number.addComma(21342); // '21,342'
@@ -33,8 +34,9 @@ const addonNumber = () => {
         })(),
 
         /**
-         * min ~ max사이의 랜덤값 반환
+         * @name {{LIB_NAME}}.number.random
          * @param {Number} min - 최소값
+         * @description min ~ max사이의 랜덤값 반환
          * @param {Number} max - 최대값
          * @return {Number} 랜덤값 반환
          */
@@ -48,8 +50,9 @@ const addonNumber = () => {
         },
 
         /**
-         * value가 min보다 작을 경우 min을, max보다 클 경우 max를 반환
+         * @name {{LIB_NAME}}.number.limit
          * @param {Number} value - 기준값
+         * @description value가 min보다 작을 경우 min을, max보다 클 경우 max를 반환
          * @param {Number} min - 최소값
          * @param {Number} max - 최대값
          * @return {Number} 상하한값을 반환
@@ -65,8 +68,9 @@ const addonNumber = () => {
         },
 
         /**
-         * 어떠한 경우에도 숫자로 변환(뒤에 있는 숫자외의 문자를 제거한 후 숫자만 추출)
+         * @name {{LIB_NAME}}.number.parse
          * @param {*} value - 숫자 + 문자가 포함된 값
+         * @description 어떠한 경우에도 숫자로 변환(뒤에 있는 숫자외의 문자를 제거한 후 숫자만 추출)
          * @return {Number} 숫자 반환
          * @example
          * {{LIB_NAME}}.number.parse('100만원'); // 100
@@ -79,8 +83,9 @@ const addonNumber = () => {
         },
 
         /**
-         * 수를 한글로 변환
+         * @name {{LIB_NAME}}.number.toKor
          * @param {Number} num - 숫자
+         * @description 수를 한글로 변환
          * @return {String} 한글로 변환된 값 반환
          * @example
          * {{LIB_NAME}}.number.toKor(123456); // 십이만삼천사백오십육

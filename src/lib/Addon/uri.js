@@ -4,11 +4,13 @@ import {Core} from '../Core/core';
 /**
  * @namespace
  * @name Core.uri
+ * @description URI 관련 코어 확장 함수
  */
 const addonUri = () => {
     Core.define('uri', {
         /**
-         * 현재 페이지의 호스트주소를 반환
+         * @name {{LIB_NAME}}.uri.getHost
+         * @description 현재 페이지의 호스트주소를 반환
          * @returns {String}
          * @example
          * {{LIB_NAME}}.uri.getHost(); // 'http://127.0.0.1:8080'
@@ -19,7 +21,7 @@ const addonUri = () => {
             return loc.protocol + '//' + loc.host;
         },
         /**
-         * 현재 url 반환(쿼리스트링, # 제외)
+         * @description 현재 url 반환(쿼리스트링, # 제외)
          * @returns {String}
          * @example
          * {{LIB_NAME}}.uri.getPageUrl(); // 'http://127.0.0.1:8080/'
@@ -31,8 +33,8 @@ const addonUri = () => {
         },
 
         /**
-         * 주어진 url에 쿼리스트링을 조합
          * @name {{LIB_NAME}}.uri.addParam
+         * @description 주어진 url에 쿼리스트링을 조합
          * @param {String} url
          * @param {String|Object} string
          * @return {String}
@@ -48,8 +50,8 @@ const addonUri = () => {
         },
 
         /**
-         * 쿼리스트링을 객체로 변환
          * @name {{LIB_NAME}}.uri.parseQuery
+         * @description 쿼리스트링을 객체로 변환
          * @param {String} query - 쿼리스트링 문자열
          * @return {Object}
          * @example
@@ -74,8 +76,8 @@ const addonUri = () => {
         },
 
         /**
-         * url를 파싱하여 host, port, protocol 등을 추출
          * @name {{LIB_NAME}}.uri.parseUrl
+         * @description url를 파싱하여 host, port, protocol 등을 추출
          * @param {string} str url 문자열
          * @return {Object}
          * @example
@@ -111,8 +113,8 @@ const addonUri = () => {
         })(),
 
         /**
-         * 주어진 url에서 해쉬문자열 제거
          * @name {{LIB_NAME}}.uri.parseUrl
+         * @description 주어진 url에서 해쉬문자열 제거
          * @param {string} url - url 문자열
          * @return {string} 결과 문자열
          * @example
@@ -123,8 +125,8 @@ const addonUri = () => {
         },
 
         /**
-         * 쿼리스트링 파라미터 값 가져오기
          * @name {{LIB_NAME}}.uri.getParam
+         * @description 쿼리스트링 파라미터 값 가져오기
          * @param {string} name - 쿼리스트링 파라미터
          * @return {string} 파라미터 값 문자열 반환
          * @example

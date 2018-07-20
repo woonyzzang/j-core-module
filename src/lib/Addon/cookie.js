@@ -5,12 +5,13 @@ import {bind} from '../Polyfill/bind';
 /**
  * @namespace
  * @name Core.cookie
+ * @description 쿠키 관련 코어 확장 함수
  */
 const addonCookie = () => {
     Core.define('cookie', {
         /**
-         * 쿠키값 설정
          * @name {{LIB_NAME}}.cookie.set
+         * @description 쿠키값 설정
          * @param {String} name - 쿠키명
          * @param {String} value - 쿠키값
          * @param {Object} [options]
@@ -47,8 +48,8 @@ const addonCookie = () => {
         },
 
         /**
-         * 쿠키값 가져오기
          * @name {{LIB_NAME}}.cookie.get
+         * @description 쿠키값 가져오기
          * @param {String} name - 쿠키명
          * @return  {String} - 쿠키값
          * @example
@@ -72,8 +73,8 @@ const addonCookie = () => {
         },
 
         /**
-         * 쿠키값 삭제
          * @name {{LIB_NAME}}.cookie.remove
+         * @description 쿠키값 삭제
          * @param {String} name - 쿠키명
          * @example
          * {{LIB_NAME}}.cookie.remove('userid'); // ''
@@ -91,8 +92,8 @@ const addonCookie = () => {
         },
 
         /**
-         * sep를 구분자로 하여 문자열로 조합하여 쿠키값 설정
          * @name {{LIB_NAME}}.cookie.setItem
+         * @description sep를 구분자로 하여 문자열로 조합하여 쿠키값 설정
          * @param {String} name - 쿠키명
          * @param {String} val - 값
          * @param {String} sep - 구분자
@@ -115,8 +116,8 @@ const addonCookie = () => {
         },
 
         /**
-         * sep를 구분자 문자열로 조합 쿠키값 가져오기
          * @name {{LIB_NAME}}.cookie.getItems
+         * @description sep를 구분자 문자열로 조합 쿠키값 가져오기
          * @param {String} name - 쿠키명
          * @example
          * {{LIB_NAME}}.cookie.getItems('arr'); // ['a']
@@ -130,8 +131,8 @@ const addonCookie = () => {
         },
 
         /**
-         * sep의 구분자 name에 셋팅되어 있던 조합문자열에서 val를 제거
          * @name {{LIB_NAME}}.cookie.removeItem
+         * @description sep의 구분자 name에 셋팅되어 있던 조합문자열에서 val를 제거
          * @param {String} name - 쿠키명
          * @param {String} val - 값
          * @param {String} sep - 구분자

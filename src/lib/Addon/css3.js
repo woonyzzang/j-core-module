@@ -4,6 +4,7 @@ import {Core} from '../Core/core';
 /**
  * @namespace
  * @name Core.css3
+ * @description css3 관련 코어 확장 함수
  */
 const addonCss3 = () => {
     Core.define('css3', function() {
@@ -43,8 +44,8 @@ const addonCss3 = () => {
 
         return {
             /**
-             * 주어진 css명 앞에 현재 브라우저에 해당하는 벤더 prefix를 붙여준다.
              * @name {{LIB_NAME}}.css3.prefix
+             * @description 주어진 css명 앞에 현재 브라우저에 해당하는 벤더 prefix를 붙여준다.
              * @param {String} cssName css명
              * @return {String}
              * @example
@@ -54,8 +55,8 @@ const addonCss3 = () => {
             prefix: prefixStyle,
 
             /**
-             * css3 지원여부
              * @name {{LIB_NAME}}.css3.support
+             * @description css3 지원여부
              * @return {Boolean}
              * @example
              * if ({{LIB_NAME}}.css3.support) {} // css3 지원 여부 확인
@@ -63,8 +64,8 @@ const addonCss3 = () => {
             support: _vender !== false,
 
             /**
-             * 3d style 지원여부
              * @name {{LIB_NAME}}.css3.support3D
+             * @description 3d style 지원여부
              * @return {Boolean}
              * @example
              * if ({{LIB_NAME}}.css3.support3D) {} // css3 3d 지원 여부 확인
@@ -112,8 +113,8 @@ const addonCss3 = () => {
             })(),
 
             /**
-             * 주어진 css속성을 지원하는지 체크
              * @name {{LIB_NAME}}.css3.has
+             * @description 주어진 css속성을 지원하는지 체크
              * @param {String} cssName 체크하고자 하는 css명
              * @return {Boolean} 지원여부
              * @example
@@ -134,64 +135,64 @@ const addonCss3 = () => {
             },
 
             /**
-             * transform 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transform
+             * @description transform 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transform;
              */
             transform: prefixStyle('transform'),
 
             /**
-             * transitionTimingFunction 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transitionTimingFunction
+             * @description transitionTimingFunction 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transitionTimingFunction;
              */
             transitionTimingFunction: prefixStyle('transitionTimingFunction'),
 
             /**
-             * transitionDuration 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transitionDuration
+             * @description transitionDuration 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transitionDuration;
              */
             transitionDuration: prefixStyle('transitionDuration'),
 
             /**
-             * transitionDelay 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transitionDelay
+             * @description transitionDelay 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transitionDelay;
              */
             transitionDelay: prefixStyle('transitionDelay'),
 
             /**
-             * transformOrigin 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transformOrigin
+             * @description transformOrigin 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transformOrigin;
              */
             transformOrigin: prefixStyle('transformOrigin'),
 
             /**
-             * transition 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transition
+             * @description transition 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transition;
              */
             transition: prefixStyle('transition'),
 
             /**
-             * translateZ 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.translateZ
+             * @description translateZ 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.translateZ;
              */
             translateZ: (prefixStyle('perspective') in _style)? ' translateZ(0)' : '',
 
             /**
-             * transitionEnd 벤더 prefix 반환
              * @name {{LIB_NAME}}.css3.transitionEnd
+             * @description transitionEnd 벤더 prefix 반환
              * @example
              * {{LIB_NAME}}.css3.transitionEnd;
              */
@@ -210,8 +211,8 @@ const addonCss3 = () => {
             })(), // 'transitionend webkitTransitionEnd MSTransitionEnd'
 
             /**
-             * 엘리먼트 요소의 현재 위치를 반환
              * @name {{LIB_NAME}}.css3.position
+             * @description 엘리먼트 요소의 현재 위치를 반환
              * @param {DOMSeletor} selector - DOM 셀렉터
              * @return {Object} data
              * @return {Number} data.x
@@ -248,8 +249,8 @@ const addonCss3 = () => {
             })(),
 
             /**
-             * css3로 움직여주는 함수
              * @name {{LIB_NAME}}.css3.move
+             * @description css3로 움직여주는 함수
              * @param {DOMSelector} selector - DOM 셀렉터
              * @param {Number|String} x
              * @param {Nymber|String} y
@@ -273,8 +274,8 @@ const addonCss3 = () => {
             },
 
             /**
-             * css3로 움직여주는 애니메이션 함수
              * @name {{LIB_NAME}}.css3.animate
+             * @description css3로 움직여주는 애니메이션 함수
              * @param {DOMSelector} selectors - DOM 셀렉터
              * @param {Number|String} x
              * @param {Number|String} y
@@ -318,8 +319,8 @@ const addonCss3 = () => {
             },
 
             /**
-             * css3 transitionStyle 추가
              * @name {{LIB_NAME}}.css3.transitionStyle
+             * @description css3 transitionStyle 추가
              * @param {DOMSelector} selector - 대상요소
              * @param {String} motion
              * @param {Float} dur

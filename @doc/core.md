@@ -24,6 +24,7 @@
 - [namespace()](#namespace)
 - [dependency()](#dependency)
 - [define()](#define)
+- [bindjQuery()](#bindjquery)
 
 <br>
 
@@ -442,12 +443,16 @@ API | 설명
 의존성 모듈 패턴을 추가하고 사용 합니다.
 
 ```js
-// 모듈 추가
-{{LIB_NAME}}.dependency.module.모듈명 = function(app) {});
+// 모듈 추가 패턴
+{{LIB_NAME}}.dependency.module.모듈명 = function(app) {
+    app.모듈이름 = function() {};
+});
 ```
 ```js
-// 모듈 사용
-{{LIB_NAME}}.dependency(['모듈명, ...'], function(Module) {});
+// 모듈 사용 패턴
+{{LIB_NAME}}.dependency(['모듈명, ...'], function(Module) {
+    Module.모듈이름();
+});
 ```
 
 ### 모듈 추가
@@ -461,9 +466,11 @@ API | 설명
         console.log('deviceChk');
     };
 
-    app.isMobile = function() {
-        console.log('isMobile');
-    };
+    app.isMobile = {{LIB_NAME}}.Class({
+        _constructor: function() {
+            console.log('isMobile');    
+        }
+    });
 };
 
 // os 모듈 추가
@@ -498,28 +505,34 @@ API | 설명
 
 <br>
 
-## define()
-코어 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수 입니다.
+## bindjQuery()
+작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수 입니다.
 
 API | 설명
 --- | ---
-@param {String} | 파츠명 `.`을 구분자로 코어 안에 하위 네임스페이스를 생성
-@param {Object or Function} | 지정된 네임스페이스에 등록할 객체, 함수 등
-@return {Object} | 생성된 새로운 네임스페이스
+@param {Object} | 클래스
+@param {string} | 플러그인명
 
 ```js
-{{LIB_NAME}}.define('urls');
+var Highlight = {{LIB_NAME}}.Class({
+    _constructor: function(selecter, options) { // 생성자의 형식을 반드시 준수 (첫번째 인수: 대상 엘리먼트, 두번째 인수: 옵션값들)
+        var settings = $.extend({
+            color: 'red',
+            backgroundColor: 'yellow'
+        }, options);
 
-console.log({{LIB_NAME}}.urls);
-```
-```js
-{{LIB_NAME}}.define('urls', {
-    store: 'Store',
-    company: 'Company'
+        this.render(selecter, settings);
+    },
+    render: function(selecter, settings) {
+        $(selecter).css({
+            color: settings.color,
+            backgroundColor: settings.backgroundColor
+        });
+    }
 });
 
-console.log({{LIB_NAME}}.urls.store);
-console.log({{LIB_NAME}}.urls.company);
+{{LIB_NAME}}.bindjQuery(Highlight, 'highlight'); // jQuery 바인딩 선언
+$('body').highlight({color: 'blue', backgroundColor: 'green'}); // jQuery 바인딩 사용
 ```
 
 [▲ 기본기능 목록 이동](#기본기능)

@@ -1,7 +1,7 @@
 import {isPlainObject} from './isPlainObject';
 
 /**
- * isType
+ * @name isType
  * @description 타입 체크
  * @param {*} value - 타입을 확인할 값 (숫자, 문자, 배열, 객체)
  * @param {String} typeName - 타입명 ('null', 'number', 'string', 'element', 'nan', 'infinity', 'date', 'array')

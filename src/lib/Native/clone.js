@@ -1,5 +1,5 @@
 /**
- * clone
+ * @name clone
  * @description 객체 복제 함수
  * @param {Array|Object} obj 배열 및 json객체
  * @return {Array|Object} 깊은 객체 복사 후 반환한다.

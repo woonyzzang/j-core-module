@@ -1,9 +1,9 @@
 import {Core} from '../Core/core';
 
 /**
- * 날짜관련 유틸함수
  * @namespace
  * @name Core.date
+ * @description 날짜관련 코어 확장 함수
  */
 const addonDate = () => {
     Core.define('date', function() {
@@ -23,9 +23,8 @@ const addonDate = () => {
             FORMAT: 'yyyy.MM.dd',
 
             /**
-             * 주어진 날짜 형식의 문자열을 Date객체로 변환
-             * @function
              * @name {{LIB_NAME}}.date.parse
+             * @description 주어진 날짜 형식의 문자열을 Date객체로 변환
              * @param {String} dateStringInRange - 날짜 형식의 문자열
              * @return {Date} 주어진 날짜문자열을 파싱한 값을 Date형으로 반환
              * @example
@@ -82,8 +81,8 @@ const addonDate = () => {
             })(),
 
             /**
-             * 날짜형식을 지정한 포맷의 문자열로 변환
              * @name {{LIB_NAME}}.date.format
+             * @description 날짜형식을 지정한 포맷의 문자열로 변환
              * @param {Date} formatDate
              * @param {String} formatString - 포맷 문자열
              * @return {String} 변환된 문자열
@@ -163,8 +162,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 날자가 유효한지 체크
              * @name {{LIB_NAME}}.date.isValid
+             * @description 주어진 날자가 유효한지 체크
              * @param {String} date 날짜 문자열
              * @returns {Boolean} 유효한 날자인지 여부
              * @example
@@ -180,8 +179,8 @@ const addonDate = () => {
             },
 
             /**
-             * date가 start와 end사이인지 여부
              * @name {{LIB_NAME}}.date.between
+             * @description date가 start와 end사이인지 여부
              * @param {Date} date - 날짜
              * @param {Date} start - 시작일시
              * @param {Date} end - 만료일시
@@ -199,8 +198,8 @@ const addonDate = () => {
             },
 
             /**
-             * 날짜 비교
              * @name {{LIB_NAME}}.date.compare
+             * @description 날짜 비교
              * @param {Date} date1 - 날짜1
              * @param {Date} date2 - 날짜2
              * @return {Number} -1: date1가 이후, 0: 동일, 1:date2가 이후
@@ -214,8 +213,8 @@ const addonDate = () => {
             compare: compare,
 
             /**
-             * 년월일이 동일한가
              * @name {{LIB_NAME}}.date.equalsYMD
+             * @description 년월일이 동일한가
              * @param {Date|String} date1 - 날짜1
              * @param {Date|String} date2 - 날짜2
              * @return {Boolean} 두 날짜의 년월일이 동일한지 여부
@@ -239,8 +238,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 날짜를 기준으로 type만큼 가감된 날짜를 format형태로 반환
              * @name {{LIB_NAME}}.date.calcDate
+             * @description 주어진 날짜를 기준으로 type만큼 가감된 날짜를 format형태로 반환
              * @param {Date} date - 기준날짜
              * @param {String} type - -2d, -3d, 4M, 2y ..
              * @param {String} format - 포맷
@@ -282,14 +281,15 @@ const addonDate = () => {
 
                 return date;
             },
-
+            
+            // {{LIB_NAME}}.date.calcDate 별칭 네이밍
             calc: function() {
                 return this.calcDate.apply(this, Array.prototype.slice.call(arguments));
             },
 
             /**
-             * 두 날짜의 월 간격
              * @name {{LIB_NAME}}.date.monthDiff
+             * @description 두 날짜의 월 간격
              * @param {Date} d1 - 날짜 1
              * @param {Date} d2 - 날짜 2
              * @return {Number} 두날짜의 월차
@@ -309,8 +309,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 년월의 일수를 반환
              * @name {{LIB_NAME}}.date.daysInMonth
+             * @description 주어진 년월의 일수를 반환
              * @param {Number} year - 년도
              * @param {Number} month - 월
              * @return {Date} 주어진 년월이 마지막 날짜
@@ -324,8 +324,8 @@ const addonDate = () => {
             },
 
             /**
-             * 밀리초를 시,분,초로 변환
              * @name {{LIB_NAME}}.date.splits
+             * @description 밀리초를 시,분,초로 변환
              * @param {Number} amount - 밀리초값
              * @return {Object} dates 변환된 시간 값
              * @return {Number} dates.days 일 수
@@ -359,8 +359,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 두 날짜의 간견을 시, 분, 초로 반환
              * @name {{LIB_NAME}}.date.diff
+             * @description 주어진 두 날짜의 간견을 시, 분, 초로 반환
              * @param {Date} t1 - 기준 시간
              * @param {Date} t2 - 비교할 시간
              * @return {Object} dates 시간차 값들이 들어있는 객체
@@ -410,8 +410,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 날짜가 몇번째 주인가
              * @name {{LIB_NAME}}.date.weekOfYear
+             * @description 주어진 날짜가 몇번째 주인가
              * @param {Date} date - 날짜
              * @return {Number}
              * @example
@@ -431,8 +431,8 @@ const addonDate = () => {
             }()),
 
             /**
-             * 윤년인가
              * @name {{LIB_NAME}}.date.isLeapYear
+             * @description 윤년인가
              * @param {Number} y 년도
              * @return {Boolean}
              * @example
@@ -445,8 +445,8 @@ const addonDate = () => {
             },
 
             /**
-             * 날짜 가감함수
              * @name {{LIB_NAME}}.date.add
+             * @description 날짜 가감함수
              * @param {Date} date 날짜
              * @param {String} interval 가감타입(ms, s, m, h, d, M, y)
              * @param {Number} value 가감 크기
@@ -488,8 +488,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 두 날짜 중에서 작은값 반환
              * @name {{LIB_NAME}}.date.min
+             * @description 주어진 두 날짜 중에서 작은값 반환
              * @param {Date} a - 날짜1
              * @param {Date} b - 날짜2
              * @return {Date} 작은값 날짜
@@ -501,8 +501,8 @@ const addonDate = () => {
             },
 
             /**
-             * 주어진 두 날짜 중에서 큰값 반환
              * @name {{LIB_NAME}}.date.max
+             * @description 주어진 두 날짜 중에서 큰값 반환
              * @param {Date} a - 날짜1
              * @param {Date} b - 날짜2
              * @return {Date} 큰값 날짜
@@ -514,8 +514,8 @@ const addonDate = () => {
             },
 
             /**
-             * 시분초 normalize화 처리
              * @name {{LIB_NAME}}.date.normalize
+             * @description 시분초 normalize화 처리
              * @param {Number} h - 시
              * @param {Number} M - 분
              * @param {Number} s - 초

@@ -1,9 +1,9 @@
 import {Core} from '../Core/core';
 
 /**
- * prototype 을 이용한 클래스 생성
  * @namespace
  * @name Core.Class
+ * @description prototype 을 이용한 클래스 생성 코어 확장 함수
  */
 const addonClass = () => {
     Core.define('Class', function() {
@@ -57,7 +57,8 @@ const addonClass = () => {
                 mixins,
                 singleton,
                 instance,
-                hooks;
+                hooks,
+                bindjQuery;
 
             if (Core.is(attr, 'function')) { attr = attr(); }
 
@@ -65,6 +66,7 @@ const addonClass = () => {
             statics = attr.$statics || false;
             mixins = attr.$mixins || false;
             hooks = attr.$hooks || false;
+            bindjQuery = attr.$bindjQuery || false;
 
             !attr._constructor && (attr._constructor = supr.prototype._constructor || function () {});
 
@@ -155,7 +157,6 @@ const addonClass = () => {
                 /**
                  * @name getInstance
                  * @description 싱클톤 클래스의 객체를 반환
-                 * @function
                  * @return {Class}
                  * @example
                  * var Child = {{LIB_NAME}}.Class({
@@ -230,7 +231,6 @@ const addonClass = () => {
             /**
 			 * @name mixins
 			 * @description 여러 클래스를 mixins방식으로 merge
-			 * @function
 			 * @param {function} o 객체
 			 * @example
 			 * var A = {{LIB_NAME}}.Class({
@@ -267,10 +267,8 @@ const addonClass = () => {
             mixins && TypeClass.mixins.call(TypeClass, mixins);
 
             /**
-			 * @memberOf common.Class
 			 * @name members
 			 * @description 클래스에 메소드 추가
-			 * @function
 			 * @param {function} o 객체
 			 * @example
 			 * var Person = {{LIB_NAME}}.Class({
@@ -293,7 +291,6 @@ const addonClass = () => {
             /**
 			 * @name statics
 			 * @description 클래스함수 추가함수
-			 * @function
 			 * @param {function} o 객체
 			 * @example
 			 * var Person = {{LIB_NAME}}.Class({
@@ -324,13 +321,29 @@ const addonClass = () => {
                 hooks.onClassCreate && hooks.onClassCreate(Class);
             }
 
+            /**
+             * @name bindjQuery
+             * @description bindjQuery 플러그인 바인딩
+             * @param {function} o 객체
+             * @example
+             * var Person = {{LIB_NAME}}.Class({
+			 *     $bindjQuery: 'highlight', // jQuery 플러그인명
+			 *		_constructor: function() {}
+			 * });
+             *
+             * $('body').highlight(); // jQuery 바인딩 사용
+             */
+            if (bindjQuery) {
+                Core.bindjQuery(TypeClass, bindjQuery);
+            }
+
             return TypeClass;
         }
 
         /**
+         * @class
          * @name Class
          * @description 루트클래스 생성
-         * @class
          * @example
          * var Person = {{LIB_NAME}}.Class({
     	 *	    $singleton: true, // 싱글톤 여부

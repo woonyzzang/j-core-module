@@ -4,6 +4,7 @@ import {Core} from '../Core/core';
  * @namespace
  * @name Core.importJs
  * // benchmark: https://github.com/malko/l.js/blob/master/l.js
+ * @description 임폴트 스크립트 관련 코어 확장 함수
  */
 const addonImportJs = () => {
     Core.define('importJs', {

@@ -3,7 +3,7 @@ import {isPlainObject} from './isPlainObject';
 import {each} from './each';
 
 /**
- * extend
+ * @name extend
  * @description 객체 확장 함수
  * @param {Boolean} [deep] - 깊은 확장 여부 옵션값
  * @param {Object} target - 원본객체

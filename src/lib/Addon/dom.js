@@ -3,12 +3,13 @@ import {Core} from '../Core/core';
 /**
  * @namespace
  * @name Core.dom
+ * @description DOM 관련 코어 확장 함수
  */
 const addonDom = () => {
     Core.define('dom', {
         /**
-         * 이벤트의 좌표 추출
          * @name {{LIB_NAME}}.dom.getEventPoint
+         * @description 이벤트의 좌표 추출
          * @param {Event} e - 이벤트 객체
          * @param {String} type - mouseend나 touchend 이벤트일때 'end'를 넘겨주면 좀더 정확한 값이 반환된다.
          * @return {x: (*|Number), y: (*|Number)}
@@ -34,8 +35,8 @@ const addonDom = () => {
         },
 
         /**
-         * 마우스 좌/우 클릭 버튼 구분 확인
          * @name {{LIB_NAME}}.dom.getMouseButton
+         * @description 마우스 좌/우 클릭 버튼 구분 확인
          * @param {Event} e - 이벤트 객체
          * @return {String} 클릭된 마우스 좌/우 버튼 문자열 반환
          * @example
@@ -70,8 +71,8 @@ const addonDom = () => {
         },
 
         /**
-         * 입력창 셀렉션 영역 캐럿 커서 위치 반환
          * @name {{LIB_NAME}}.dom.getCaretPos
+         * @description 입력창 셀렉션 영역 캐럿 커서 위치 반환
          * @param {DOMSeletor} selector - DOM 셀렉터
          * @return {begin: Number, end: Number}
          * @example
@@ -118,8 +119,8 @@ const addonDom = () => {
         },
 
         /**
-         * 입력창 셀렉션 영역 캐럿 커서 위치 설정
          * @name {{LIB_NAME}}.dom.setCaretPos
+         * @description 입력창 셀렉션 영역 캐럿 커서 위치 설정
          * @param {DOMSeletor} selector - DOM 셀렉터
          * @param {Number} pos - 캐럿 커서 위치
          * @example
@@ -149,8 +150,8 @@ const addonDom = () => {
         },
 
         /**
-         * 자식 요소가 특정한 부모요소에 속해 있는지 확인
          * @name {{LIB_NAME}}.dom.contains
+         * @description 자식 요소가 특정한 부모요소에 속해 있는지 확인
          * @param {DOMSeletor} parent - 부모 DOM 셀렉터
          * @param {DOMSeletor} child - 자식 DOM 셀렉터
          * @return {Boolean}
@@ -168,8 +169,8 @@ const addonDom = () => {
         },
 
         /**
-         * 해당 요소의 클래스 추가
          * @name {{LIB_NAME}}.dom.addClass
+         * @description 해당 요소의 클래스 추가
          * @param {DOMSeletor} element - DOM 셀렉터
          * @param {String} className - 클래스명
          * @example
@@ -180,8 +181,8 @@ const addonDom = () => {
         },
 
         /**
-         * 해당 요소의 클래스 삭제
          * @name {{LIB_NAME}}.dom.removeClass
+         * @description 해당 요소의 클래스 삭제
          * @param {DOMSeletor} element - DOM 셀렉터
          * @param {String} className - 클래스명
          * @example
@@ -194,8 +195,8 @@ const addonDom = () => {
         },
 
         /**
-         * 해당 요소의 특정 클래스 존재 유무 확인
          * @name {{LIB_NAME}}.dom.toggleClass
+         * @description 해당 요소의 특정 클래스 존재 유무 확인
          * @param {DOMSeletor} element - DOM 셀렉터
          * @param {String} className - 클래스명
          * @return {Boolean}
@@ -207,8 +208,8 @@ const addonDom = () => {
         },
 
         /**
-         * 토글 클래스
          * @name {{LIB_NAME}}.dom.toggleClass
+         * @description 토글 클래스
          * @param {DOMSeletor} element - DOM 셀렉터
          * @param {String} className - 클래스명
          * @example
@@ -225,8 +226,8 @@ const addonDom = () => {
         },
 
         /**
-         * 이벤트 핸들러
          * @name {{LIB_NAME}}.dom.addEvent
+         * @description 이벤트 핸들러
          * @param {DOMSeletor} element - DOM 셀렉터
          * @param {String} eventType - 이벤트 타입
          * @param {Function} cb - 콜백함수

@@ -14,10 +14,9 @@ if (global[core]) { throw new Error('The same core name exists.'); }
 // if (!global['$']) { throw new Error('This library requires jQuery'); }
 
 /**
- * Core
  * @namespace
  * @name Core
- * @description root namespace
+ * @description 루트 네임스페이스 식별자
  */
 let Core = global[core] || (global[core] = {});
 
@@ -33,8 +32,8 @@ extend(Core, {
     emptyFn: function() {}, // 빈 함수
 
     /**
-     * 코어 네이밍 식별자 변경 (다른 자바스크립트 프레임워크 네이밍 충돌 방지)
      * @name {{LIB_NAME}}.noConflict
+     * @description 코어 네이밍 식별자 변경 (다른 자바스크립트 프레임워크 네이밍 충돌 방지)
      * @example
      * var JUILIB = {{LIB_NAME}}.noConflict();
      */
@@ -45,8 +44,8 @@ extend(Core, {
     },
 
     /**
-     * 특정속성을 지원하는지 체크하기 위한 엘리먼트
      * @name {{LIB_NAME}}.tmpInput
+     * @description 특정속성을 지원하는지 체크하기 위한 엘리먼트
      * @example
      * if ('placeholder' in {{LIB_NAME}}.tmpInput) {
      *     alert('placeholder를 지원합니다.');
@@ -55,8 +54,8 @@ extend(Core, {
     tmpInput: doc.createElement('input'),
 
     /**
-     * 특정 css스타일을 지원하는지 체크하기 위한 엘리먼트
      * @name {{LIB_NAME}}.tmpNode
+     * @description 특정 css스타일을 지원하는지 체크하기 위한 엘리먼트
      * @example
      * if ('transform' in {{LIB_NAME}}.tmpNode.style) {
      *     alert('transform를 지원합니다.');
@@ -65,13 +64,14 @@ extend(Core, {
     tmpNode: doc.createElement('div'),
 
     /**
-     * 타입 체크
      * @name {{LIB_NAME}}.is
+     * @description 타입 체크
      */
     is: isType,
 
     /**
-     * 주어진 인자가 빈값인지 체크
+     * @name {{LIB_NAME}}.isEmpty
+     * @description 주어진 인자가 빈값인지 체크
      * @param {*} value - 체크할 값(문자열, 객체 등등)
      * @param {Boolean} [allowEmptyString = false] - 빈문자를 허용할 것인지 여부
      * @return {Boolean} 빈값인지 체크 후 불린값 반환
@@ -93,7 +93,8 @@ extend(Core, {
     },
 
     /**
-     * 객체 자체에 주어진 이름의 속성이 있는지 조회
+     * @name {{LIB_NAME}}.hasOwn
+     * @description 객체 자체에 주어진 이름의 속성이 있는지 조회
      * @param {Object} obj - 객체
      * @param {String} name - 키 이름
      * @return {Boolean} 키의 존재 여부
@@ -108,8 +109,8 @@ extend(Core, {
     },
 
     /**
-     * 네임스페이스 공간을 생성하고 객체를 설정하며 .를 구분자로 하여 하위 네임스페이스가 생성된다.
      * @name {{LIB_NAME}}.namespace
+     * @description 네임스페이스 공간을 생성하고 객체를 설정하며 .를 구분자로 하여 하위 네임스페이스가 생성된다.
      * @param {String} part - 네임스페이스명
      * @param {Object|Function} [obj] - 지정된 네임스페이스에 등록할 객체, 함수 등
      * @return {Object} 생성된 새로운 네임스페이스
@@ -143,8 +144,8 @@ extend(Core, {
     },
 
     /**
-     * 의존성 모듈 패턴
      * @name {{LIB_NAME}}.dependency
+     * @description 의존성 모듈 패턴
      * @example
      * // device 모듈 추가
      * {{LIB_NAME}}.dependency.module.device = function(app) {
@@ -206,8 +207,8 @@ extend(Core, {
     },
 
     /**
-     * {{LIB_NAME}} 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
      * @name {{LIB_NAME}}.define
+     * @description 코어 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
      * @param {String} part - .를 구분자로 해서 {{LIB_NAME}}을 시작으로 하위 네임스페이스를 생성하며 part가 없으면 {{LIB_NAME}}에 추가된다.
      * @param {Object|Function} obj - 지정된 네임스페이스에 등록할 객체, 함수 등
      * @return {Object} 생성된 새로운 네임스페이스
@@ -239,6 +240,121 @@ extend(Core, {
         }
 
         return ((leaf && (parent[leaf])? Core.extend(parent[leaf], obj) : (parent[leaf] = obj))) || Core.extend(parent, obj), obj;
+    },
+
+    /**
+     * @name {{LIB_NAME}}.bindjQuery
+     * @description 작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수
+     * @param {Object} Klass 클래스
+     * @param {string} name 플러그인명
+     * @example
+     * // 클래스 정의
+     * var Highlight = {{LIB_NAME}}.Class({
+     *     _constructor: function(selecter, options) { // 생성자의 형식을 반드시 준수 (첫번째 인수: 대상 엘리먼트, 두번째 인수: 옵션값들)
+     *         var settings = $.extend({
+     *              color: 'red',
+     *              backgroundColor: 'yellow'
+     *          }, options);
+     *
+     *          this.render(selecter, settings);
+     *     },
+     *     render: function(selecter, settings) {
+     *          $(selecter).css({
+     *              color: settings.color,
+     *              backgroundColor: settings.backgroundColor
+     *          });
+     *      }
+     * });
+     * {{LIB_NAME}}.bindjQuery(Highlight, 'highlight'); // jQuery 바인딩 선언
+     * $('body').highlight({color: 'blue', backgroundColor: 'green'}); // jQuery 바인딩 사용
+     */
+    //  bindjQuery: function(className, bindName) {
+    //     if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
+    //
+    //     const TypeClass = Core.emptyFn;
+    //
+    //     TypeClass.prototype = new className;
+    //     TypeClass.prototype.constructor = TypeClass;
+    //
+    //     $.fn[bindName] = function(options) {
+    //         const _this = this;
+    //
+    //         Core.each(this, function(index) {
+    //             if (Core.is(options, 'string')) { // 단일 메소드 실행
+    //                 new className()[options].apply(TypeClass, Array.prototype.slice.call(arguments, 1));
+    //             } else {
+    //                 className.apply(new TypeClass, [_this, options]);
+    //             }
+    //         });
+    //
+    //         return this;
+    //     };
+    // }
+    bindjQuery: function(Klass, name, prefix) {
+        if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
+
+        var pluginName = (prefix)? prefix + name.substr(0, 1).toUpperCase() + name.substr(1) : name,
+            old = $.fn[pluginName];
+
+        $.fn[pluginName] = function(options) {
+            var args = Array.prototype.slice.call(arguments, 1),
+                _this = this,
+                returnValue = _this;
+
+            this.each(function() {
+                var $this = $(this),
+                    methodValue,
+                    instance = $this.data('ui_' + name);
+
+                if (instance && options === 'release') {
+                    try {
+                        instance.release();
+                    } catch (e) {}
+
+                    $this.removeData('ui_' + name);
+
+                    return;
+                }
+
+                if (!instance || (arguments.length === 1 && typeof options !== 'string')) {
+                    instance && (instance.release(), $this.removeData('ui_' + name));
+                    $this.data('ui_' + name, (instance = new Klass(this, Core.extend({}, $this.data(), options), _this)));
+                }
+
+                if (options === 'instance') {
+                    returnValue = instance;
+
+                    return false;
+                }
+
+                if (typeof options === 'string' && Core.is(instance[options], 'function')) {
+                    if (options.substr(0, 1) === '_') {
+                        throw new Error('[bindjQuery] private 메소드는 호출할 수 없습니다.');
+                    }
+
+                    try {
+                        methodValue = instance[options].apply(instance, args);
+                    } catch (e) {
+                        console.error('[' + name + '.' + options + ' error] ' + e);
+                    }
+
+                    if (methodValue !== instance && typeof methodValue !== 'undefined') {
+                        returnValue = methodValue;
+
+                        return false;
+                    }
+                }
+            });
+
+            return returnValue;
+        };
+
+        // 기존의 모듈로 복구
+        $.fn[pluginName].noConflict = function() {
+            $.fn[pluginName] = old;
+
+            return this;
+        };
     }
 });
 

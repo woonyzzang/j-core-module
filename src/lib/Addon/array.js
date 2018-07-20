@@ -1,15 +1,15 @@
 import {Core} from '../Core/core';
 
 /**
- * 배열관련 유틸함수
  * @namespace
  * @name Core.array
+ * @description 배열 관련 코어 확장 함수
  */
 const addonArray = () => {
     Core.define('array', function() {
         /**
-         * 네이티브 배열 프로토타입 속성 및 메서드 기능 지원 확인
          * @name {{LIB_NAME}}.array.nativeCall
+         * @description 네이티브 배열 프로토타입 속성 및 메서드 기능 지원 확인
          * @param {Function} f - 네이티브 배열 프로토타입 기능
          * @return {Function|Boolean} 네이티브 배열 프로토타입에 f가 존재하지 않으면 false 반환
          * @exmaple
@@ -23,8 +23,8 @@ const addonArray = () => {
 
         return {
             /**
-             * 배열 병합
              * @name {{LIB_NAME}}.array.append
+             * @description 배열 병합
              * @param {Array} array - 원본 배열
              * @param {...*} var_args - 합칠 요소들
              * @return {Array} 모두 합쳐진 배열
@@ -38,8 +38,8 @@ const addonArray = () => {
             },
 
             /**
-             * 콜백함수로 하여금 요소를 가공하는 함수
              * @name {{LIB_NAME}}.array.map
+             * @description 콜백함수로 하여금 요소를 가공하는 함수
              * @param {Array} array - 배열
              * @param {ArrayCallback} cb - 콜백함수
              * @param {Object} (optional) - 컨텍스트
@@ -63,8 +63,8 @@ const addonArray = () => {
             },
 
             /**
-             * 반복자함수의 반환값이 true가 아닐 때까지 반복
              * @name {{LIB_NAME}}.array.every
+             * @description 반복자함수의 반환값이 true가 아닐 때까지 반복
              * @param {Array} array - 배열
              * @param {ArrayCallback} cb - 함수
              * @return {Boolean} 최종 결과
@@ -87,8 +87,8 @@ const addonArray = () => {
             },
 
             /**
-             * 반복자함수의 반환값이 true일 때까지 반복
              * @name {{LIB_NAME}}.array.any
+             * @description 반복자함수의 반환값이 true일 때까지 반복
              * @param {Array} array 배열
              * @param {ArrayCallback} cb 콜백함수
              * @return {Boolean} 최종 결과
@@ -111,8 +111,8 @@ const addonArray = () => {
             },
 
             /**
-             * 배열 요소의 순서를 섞어주는 함수
              * @name {{LIB_NAME}}.array.shuffle
+             * @description 배열 요소의 순서를 섞어주는 함수
              * @param {Array} array - 배열
              * @return {Array} 순서가 섞인 새로운 배열
              * @example
@@ -133,8 +133,8 @@ const addonArray = () => {
             },
 
             /**
-             * 콜백함수로 하여금 요소를 걸려내는 함수
              * @name {{LIB_NAME}}.array.filter
+             * @description 콜백함수로 하여금 요소를 걸려내는 함수
              * @param {Array} array - 배열
              * @param {Function(value, index)} cb - 콜백함수
              * @param {*=} (optional) 컨텍스트
@@ -158,8 +158,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 인덱스의 요소를 반환
              * @name {{LIB_NAME}}.array.indexOf
+             * @description 주어진 인덱스의 요소를 반환
              * @param {Array} array - 배열
              * @param {*} value - 찾을 값
              * @return {Number}
@@ -175,8 +175,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 배열에 지정된 값이 존재하는지 체크
              * @name {{LIB_NAME}}.array.include
+             * @description 주어진 배열에 지정된 값이 존재하는지 체크
              * @param {Array} array - 배열
              * @param {*} value - 찾을 값
              * @return {Boolean}
@@ -198,8 +198,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 배열에서 index에 해당하는 요소를 삭제
              * @name {{LIB_NAME}}.array.removeAt
+             * @description 주어진 배열에서 index에 해당하는 요소를 삭제
              * @param {Array} value 배열
              * @param {Number} index 삭제할 인덱스 or 요소
              * @return {Array} 지정한 요소가 삭제된 배열
@@ -215,8 +215,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 배열에서 해당하는 요소를 삭제
              * @name {{LIB_NAME}}.array.remove
+             * @description 주어진 배열에서 해당하는 요소를 삭제
              * @param {Array} value - 배열
              * @param {*|Function(value, index)} iter - 요소 및 필터콜백
              * @return {Array} 지정한 요소가 삭제된 배열
@@ -245,8 +245,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 배열에서 가장 큰 요소를 반환
              * @name {{LIB_NAME}}.array.max
+             * @description 주어진 배열에서 가장 큰 요소를 반환
              * @param {Array} array - 배열
              * @return {Number} 최대값
              * @example
@@ -257,8 +257,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 배열에서 가장 작은 요소를 반환
              * @name {{LIB_NAME}}.array.min
+             * @description 주어진 배열에서 가장 작은 요소를 반환
              * @param {Array} array - 배열
              * @return {Number} 최소값
              * @example
@@ -269,8 +269,8 @@ const addonArray = () => {
             },
 
             /**
-             * 배열의 요소를 역순으로 재배치
              * @name {{LIB_NAME}}.array.reverse
+             * @description 배열의 요소를 역순으로 재배치
              * @param {Array} array - 배열
              * @return {Array} 역순으로 정렬된 새로운 배열
              * @example
@@ -292,8 +292,8 @@ const addonArray = () => {
             },
 
             /**
-             * 두 배열의 차집합을 반환
              * @name {{LIB_NAME}}.array.different
+             * @description 두 배열의 차집합을 반환
              * @param {Array} array1 - 배열1
              * @param {Array} array2 - 배열2
              * @returns {Array} 차집합 배열
@@ -315,8 +315,8 @@ const addonArray = () => {
             },
 
             /**
-             * 배열요소들의 합을 반환
              * @name {{LIB_NAME}}.array.sum
+             * @description 배열요소들의 합을 반환
              * @param {Array} array - 배열
              * @return {number}
              * @example
@@ -333,8 +333,8 @@ const addonArray = () => {
             },
 
             /**
-             * 주어진 값을 배열로 변환
              * @name {{LIB_NAME}}.array.toArray
+             * @description 주어진 값을 배열로 변환
              * @param {*} value 배열로 변환하고자 하는 값
              * @return {Array}
              * @example

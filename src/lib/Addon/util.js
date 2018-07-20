@@ -3,12 +3,13 @@ import {Core} from '../Core/core';
 /**
  * @namespace
  * @name Core.util
+ * @description 유틸 관련 코어 확장 함수
  */
 const addonUtil = () => {
     Core.define('util', {
         /**
-         * 브라우저의 Detect 정보: 되도록이면 Modernizr 라이브러리를 사용할 것을 권함
          * @name {{LIB_NAME}}.util.browser
+         * @description 브라우저의 Detect 정보: 되도록이면 Modernizr 라이브러리를 사용할 것을 권함
          * @example
          * {{LIB_NAME}}.util.browser.isTouch // 터치디바이스 여부
          * {{LIB_NAME}}.util.browser.isRetina // 레티나 여부
@@ -95,8 +96,8 @@ const addonUtil = () => {
         })(),
 
         /**
-         * 주어진 시간내에 호출이 되면 무시되고, 초과했을 때만 비로소 fn를 실행시켜주는 함수
          * @name {{LIB_NAME}}.util.delayRun
+         * @description 주어진 시간내에 호출이 되면 무시되고, 초과했을 때만 비로소 fn를 실행시켜주는 함수
          * @param {Function} fn - 콜백함수
          * @param {Number} time - 딜레이시간
          * @param {*} scope - 컨텍스트
@@ -127,8 +128,8 @@ const addonUtil = () => {
         },
 
         /**
-         * 15자의 영문, 숫자로 이루어진 유니크한 값 생성
          * @name {{LIB_NAME}}.util.getUniqId
+         * @description 15자의 영문, 숫자로 이루어진 유니크한 값 생성
          * @return {string}
          * @example
          * {{LIB_NAME}}.util.getUniqId(45); //eronv05ez56qjypsvrzheypyariyh6deodwpqu74j834w
@@ -143,8 +144,8 @@ const addonUtil = () => {
         },
 
         /**
-         * 순번으로 유니크값을 생성해서 반환
          * @name {{LIB_NAME}}.util.nextSeq
+         * @description 순번으로 유니크값을 생성해서 반환
          * @return {number}
          * @example
          * {{LIB_NAME}}.util.nextSeq(); // 순차적으로 실행할 때 마다 1, 2, 3... 반환
@@ -158,8 +159,8 @@ const addonUtil = () => {
         }()),
 
         /**
-         * 템플릿 생성
          * @name {{LIB_NAME}}.util.template
+         * @description 템플릿 생성
          * @param {String} text - 템플릿 문자열
          * @param {Object} data - 템플릿 문자열에서 변환될 데이타
          * @param {Object} settings - 옵션
@@ -202,8 +203,8 @@ const addonUtil = () => {
         // },
 
         /**
-         * 템플릿 생성
          * @name {{LIB_NAME}}.util.template2
+         * @description 템플릿 생성
          * @param {DOMSeletor} selector - DOM 셀렉터
          * @param {Object} data - 템플릿 문자열에서 변환될 데이터
          * @return {Object} 변환된 DOM Chunk 반환

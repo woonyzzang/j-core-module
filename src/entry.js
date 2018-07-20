@@ -6,6 +6,7 @@
  * @create 180706
  */
 
+// import $ from './vendor/jquery-1.6.4.min';
 // import 'babel-polyfill'; // IE8 에러
 
 // import {global, doc, LIB_NAME as core} from './lib/config';

@@ -3,15 +3,15 @@ import {Core} from '../Core/core';
 import {isPlainObject} from '../Native/isPlainObject';
 
 /**
- * JSON객체 관련 유틸함수
  * @namespace
  * @name {{LIB_NAME}}.object
+ * @description N객체 관련 코어 확장 함수
  */
 const addonObject = () => {
     Core.define('object', {
         /**
-         * 객체의 열거가능한 속성 및 메서드 이름을 배열로 반환
          * @name {{LIB_NAME}}.object.keys
+         * @description 객체의 열거가능한 속성 및 메서드 이름을 배열로 반환
          * @param {Object} obj - 리터럴 객체
          * @return {Array} 객체의 열거가능한 속성의 이름이 포함된 배열
          * @example
@@ -28,8 +28,8 @@ const addonObject = () => {
         },
 
         /**
-         * 객체의 열거가능한 속성의 값을 배열로 반환
          * @name {{LIB_NAME}}.object.values
+         * @description 객체의 열거가능한 속성의 값을 배열로 반환
          * @param {Object} obj - 리터럴 객체
          * @return {Array} 객체의 열거가능한 속성의 값들이 포함된 배열
          * @example
@@ -46,8 +46,8 @@ const addonObject = () => {
         },
 
         /**
-         * 콜백함수로 바탕으로 각 요소를 가공하는 함수
          * @name {{LIB_NAME}}.object.map
+         * @description 콜백함수로 바탕으로 각 요소를 가공하는 함수
          * @param {Object} obj 객체
          * @param {Function(value, index)} cb - 콜백함수
          * @return {Object}
@@ -70,8 +70,8 @@ const addonObject = () => {
         },
 
         /**
-         * 요소가 있는 json 객체인지 체크
          * @name {{LIB_NAME}}.object.hasObject
+         * @description 요소가 있는 json 객체인지 체크
          * @param {Object} obj - json객체
          * @return {Boolean} 요소가 하나라도 있는지 여부
          * @example
@@ -93,8 +93,8 @@ const addonObject = () => {
         },
 
         /**
-         * 객체를 쿼리스크링으로 변환
          * @name {{LIB_NAME}}.object.toQueryString
+         * @description 객체를 쿼리스크링으로 변환
          * @param {Object} obj - json객체
          * @param {Boolean} [isEncode = true] - URL 인코딩할지 여부
          * @return {String} 결과 문자열 반환
@@ -128,8 +128,8 @@ const addonObject = () => {
         },
 
         /**
-         * 주어진 json를 키와 요소를 맞바꿔주는 함수
          * @name {{LIB_NAME}}.object.traverse
+         * @description 주어진 json를 키와 요소를 맞바꿔주는 함수
          * @param {Object} obj - 객체
          * @return {Object}
          * @example
@@ -147,8 +147,8 @@ const addonObject = () => {
         },
 
         /**
-         * 주어진 리터럴에서 key에 해당하는 요소를 삭제
          * @name {{LIB_NAME}}.object.remove
+         * @description 주어진 리터럴에서 key에 해당하는 요소를 삭제
          * @param {Object} value - 리터럴
          * @param {String} key - 삭제할 키
          * @return 지정한 요소가 삭제된 리터럴 반환
@@ -168,8 +168,8 @@ const addonObject = () => {
         },
 
         /**
-         * json를 문자열로 변환(JSON을 지원하는 브라우저에서는 JSON.stringify를 사용.)
          * @name {{LIB_NAME}}.object.stringfy
+         * @description json를 문자열로 변환(JSON을 지원하는 브라우저에서는 JSON.stringify를 사용.)
          * @param {Object} val - json 객체
          * @param {Object} [opts]
          * @param {Boolean} [opts.singleQuotes = false] - 문자열을 '로 감쌀것인가

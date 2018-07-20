@@ -2,7 +2,7 @@ import {isArray} from './isArray';
 import {isObject} from './isObject';
 
 /**
- * each
+ * @name each
  * @description 반복 함수
  * @param {Array|Object} obj - 배열 및 객체
  * @param {Function} cb - 콜백함수

@@ -3,8 +3,8 @@ import {global, doc, LIB_NAME as core} from '../config';
 global['LIB_DEV_DEBUG'] = false;
 
 /**
- * debug
- * @description 로그 확인
+ * @name debug
+ * @description 디버깅용 로그 확인
  * @example
  * {{LIB_NAME}}.debug.log();
  * {{LIB_NAME}}.debug.logs();
@@ -45,8 +45,8 @@ const debug = (() => {
         mode: false, // 디버깅 여부
 
         /**
-         * 모바일 로그 확인용(클린)
          * @name {{LIB_NAME}}.degug.log
+         * @description 모바일 로그 확인용(클린)
          * @example
          * {{LIB_NAME}}.degug.log('...');
          */
@@ -67,8 +67,8 @@ const debug = (() => {
         },
 
         /**
-         * 모바일 로그 확인용
          * @name {{LIB_NAME}}.degug.logs
+         * @description 모바일 로그 확인용
          * @example
          * {{LIB_NAME}}.degug.logs('...');
          */
