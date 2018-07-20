@@ -14,6 +14,40 @@
 
 <br>
 
+## template
+HTML5 템플릿 엘리먼트 폴리필 기능을 지원 합니다.
+
+```js
+<html>
+<head>
+<!-- HTML 안에 <template>를 렌더링 하기전 head안의 스크립트 선언 -->
+<script>document.createElement('template');</script>
+<!-- CSS안에 template{display:none} 선언 -->
+<style>template{display:none}</style>
+</head>
+<body>
+<template id="example">
+    <h1>This is template content.</h1>
+    <p>Its really great.</p>
+</template>
+<div id="target">
+    <p>This is regular old content.</p>
+</div>
+
+<script>
+var $template = document.getElementsByTagName('template')[0];
+var $target = document.getElementById('target');
+
+$target.appendChild($template.content.cloneNode(true));
+</script>
+</body>
+</html>
+```
+
+[▲ 폴리필 목록 이동](#폴리필기능)
+
+<br>
+
 ## querySelector()
 쿼리 셀렉터 폴리필 기능을 지원 합니다.
 
@@ -84,40 +118,6 @@ function Test() {
 Test.bind({name: 'axl rose'})();
 
 // 'axl rose';
-```
-
-[▲ 폴리필 목록 이동](#폴리필기능)
-
-<br>
-
-## template
-HTML5 템플릿 엘리먼트 폴리필 기능을 지원 합니다.
-
-```js
-<html>
-<head>
-<!-- HTML 안에 <template>를 렌더링 하기전 head안의 스크립트 선언 -->
-<script>document.createElement('template');</script>
-<!-- CSS안에 template{display:none} 선언 -->
-<style>template{display:none}</style>
-</head>
-<body>
-<template id="example">
-    <h1>This is template content.</h1>
-    <p>Its really great.</p>
-</template>
-<div id="target">
-    <p>This is regular old content.</p>
-</div>
-
-<script>
-var $template = document.getElementsByTagName('template')[0];
-var $target = document.getElementById('target');
-
-$target.appendChild($template.content.cloneNode(true));
-</script>
-</body>
-</html>
 ```
 
 [▲ 폴리필 목록 이동](#폴리필기능)
