@@ -152,7 +152,7 @@ var clone = {{LIB_NAME}}.clone(ori); // {a: 'A', b: [1, 2, 3]};
 
 <br>
 
-## emptyFn()
+## emptyFn
 빈 함수를 반환 합니다.
 
 ```js
@@ -198,7 +198,7 @@ if ('transform' in {{LIB_NAME}}.tmpNode.style) {
 
 <br>
 
-## is
+## is()
 숫자, 문자, 배열, 객체 타입을 체크 합니다. (파라미터를 하나만 넘기면 타입명을 반환받을 수 있습니다.)
 
 API | 설명
@@ -401,6 +401,7 @@ API | 설명
 의존성 모듈 패턴을 추가하고 사용 합니다.
 
 `Alias: modules`
+<br>
 `Alias: modules.module`
 
 ```js
