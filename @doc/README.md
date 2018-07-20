@@ -108,7 +108,7 @@
 - max()
 - normalize()
 
-## [URI](uri.md)
+## [Uri](uri.md)
 > URL 관련 코어 확장 기능
 
 - getHost()
@@ -119,7 +119,7 @@
 - removeHash()
 - getParam()
 
-## [DOM](dom.md)
+## [Dom](dom.md)
 > DOM 관련 코어 확장 기능
 
 - getEventPoint()
@@ -133,7 +133,7 @@
 - toggleClass()
 - addEvent()
 
-## [CSS3](css3.md)
+## [Css3](css3.md)
 > CSS3 관련 코어 확장 기능
 
 - prefix()
