@@ -508,6 +508,8 @@ API | 설명
 ## bindjQuery()
 작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수 입니다.
 
+`jQuery를 로드 해야 사용 가능`
+
 API | 설명
 --- | ---
 @param {Object} | 클래스

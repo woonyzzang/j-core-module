@@ -233,6 +233,8 @@ Parent.live();
 ### 6. jQuery 플러그인 바인딩 패턴
 바인드 제이쿼리 옵션을 사용하면 jQuery 바인딩 선언 없이 jQuery 플러그인으로 사용이 가능합니다.
 
+`jQuery를 로드 해야 사용 가능`
+
 옵션 | 설명
 --- | ---
 $bindjQuery {String} | jQuery 플러그인명
