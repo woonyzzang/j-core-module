@@ -411,7 +411,7 @@ API | 설명
 
 ## 모듈 추가
 
-`Alias: modules()`
+`Alias: modules.module`
 
 ```js
 // device 모듈 추가
@@ -435,7 +435,7 @@ API | 설명
 
 ## 추가된 모듈 사용
 
-`Alias: modules.module`
+`Alias: modules()`
 
 ```js
 // 의존성 모듈 선언을 생략 시 전체 모듈 사용
