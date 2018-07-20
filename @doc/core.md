@@ -60,7 +60,7 @@ API | 설명
 @param {...any} | 로그
 
 ```js
-{{LIB_NAME}}.debug.log('log...'); // 클린로그 확인
+{{LIB_NAME}}.debug.log('log...'); // 로그 확인(클린)
 ```
 ```js
 {{LIB_NAME}}.debug.logs('logs...'); // 다중로그 확인
