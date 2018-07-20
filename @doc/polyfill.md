@@ -25,7 +25,7 @@ API | 설명
 document.querySelector('#gnb');
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
 
 <br>
 
@@ -47,7 +47,7 @@ document.querySelectorAll('a')[0];
 // <a> 엘리먼트 첫번째 선택
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
 
 <br>
 
@@ -62,7 +62,7 @@ API | 설명
 document.getElementsByClassName('tab_menu');
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
 
 <br>
 
@@ -86,7 +86,7 @@ Test.bind({name: 'axl rose'})();
 // 'axl rose';
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
 
 <br>
 
@@ -120,7 +120,7 @@ $target.appendChild($template.content.cloneNode(true));
 </html>
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
 
 <br>
 
@@ -138,4 +138,4 @@ if (matchMedia('only screen and (max-width: 480px)').matches) {}
 if (matchMedia('all and (orientation:landscape)').matches) {}
 ```
 
-[▲ 폴리필 목록 이동](#폴리필)
+[▲ 폴리필 목록 이동](#폴리필기능)
