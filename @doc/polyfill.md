@@ -5,11 +5,11 @@
 
 ## 폴리필기능
 
+- [template](#template)
 - [querySelector()](#queryselector)
 - [querySelectorAll()](#queryselectorall)
 - [getElementsByClassName()](#getelementsbyclassname)
 - [bind()](#bind)
-- [template](#template)
 - [matchMedia()](#matchmedia)
 
 <br>
