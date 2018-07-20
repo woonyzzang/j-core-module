@@ -30,9 +30,12 @@ import {addonDom} from './lib/Addon/dom';
 import {addonCss3} from './lib/Addon/css3';
 import {addonCookie} from './lib/Addon/cookie';
 import {addonUtil} from './lib/Addon/util';
-// import {addonImportJs} from './lib/Addon/importJs';
-import {addonClass} from './lib/Addon/class';
 import {addonEnv} from './lib/Addon/env';
+// import {addonImportJs} from './lib/Addon/importJs';
+import {addonNamespace} from './lib/Addon/namespace';
+import {addonDependency} from './lib/Addon/dependency';
+import {addonClass} from './lib/Addon/class';
+import {addonBindjQuery} from './lib/Addon/bindjQuery';
 
 /** 폴리필 */
 // https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
@@ -56,6 +59,9 @@ addonDom();
 addonCss3();
 addonCookie();
 addonUtil();
-// addonImportJs();
-addonClass();
 addonEnv();
+// addonImportJs();
+addonNamespace();
+addonDependency();
+addonClass();
+addonBindjQuery();

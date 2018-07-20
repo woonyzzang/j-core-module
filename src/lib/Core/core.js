@@ -123,25 +123,25 @@ extend(Core, {
      *     }
      * };
      */
-    namespace: (part, obj) => {
-        if (typeof part !== 'string') {
-            obj && (part = obj);
-
-            return part;
-        }
-
-        let parent = Core,
-            parts = part.split('.'),
-            i, item;
-
-        for (i = -1; item = parts[++i];) {
-            if (parent[item]) { throw new Error('The same core namespace exists.'); } // 기본 네임스페이스 이름 생성시 에러 반환
-
-            parent = parent[item] || (parent[item] = {});
-        }
-
-        return Core.extend(parent, obj || {});
-    },
+    // namespace: (part, obj) => {
+    //     if (typeof part !== 'string') {
+    //         obj && (part = obj);
+    //
+    //         return part;
+    //     }
+    //
+    //     let parent = Core,
+    //         parts = part.split('.'),
+    //         i, item;
+    //
+    //     for (i = -1; item = parts[++i];) {
+    //         if (parent[item]) { throw new Error('The same core namespace exists.'); } // 기본 네임스페이스 이름 생성시 에러 반환
+    //
+    //         parent = parent[item] || (parent[item] = {});
+    //     }
+    //
+    //     return Core.extend(parent, obj || {});
+    // },
 
     /**
      * @name {{LIB_NAME}}.dependency
@@ -176,39 +176,154 @@ extend(Core, {
      * // 코어 별칭 모듈 사용 단축 네이밍: modules
      * {{LIB_NAME}}.modules(['*'], function(Module) {});
      */
-    dependency: function() {
-        const args = Array.prototype.slice.call(arguments),
-            callback = args.pop();
-        let modules = (args[0] && (typeof args[0] === 'string'))? args : args[0];
+    // dependency: function() {
+    //     const args = Array.prototype.slice.call(arguments),
+    //         callback = args.pop();
+    //     let modules = (args[0] && (typeof args[0] === 'string'))? args : args[0];
+    //
+    //     if (!(this instanceof Core.dependency)) {
+    //         return new Core['dependency'](modules, callback);
+    //     }
+    //
+    //     // 모듈선언이 생략되거나 전체선택자일 경우
+    //     if (!modules || modules === '*' || modules[0] === '*') {
+    //         modules = [];
+    //         const ref = Core.dependency.module;
+    //
+    //         for (let k in ref) {
+    //             if (Core.dependency.module.hasOwnProperty(k)) {
+    //                 modules.push(k);
+    //             }
+    //         }
+    //     }
+    //
+    //     for (let i = 0, len = modules.length; i < len; i++) {
+    //         Core.dependency.module[modules[i]](this);
+    //     }
+    //
+    //     if ((typeof callback !== 'undefined') && (typeof callback === 'function')) {
+    //         return callback(this);
+    //     }
+    // },
 
-        if (!(this instanceof Core.dependency)) {
-            return new Core['dependency'](modules, callback);
-        }
-
-        // 모듈선언이 생략되거나 전체선택자일 경우
-        if (!modules || modules === '*' || modules[0] === '*') {
-            modules = [];
-            const ref = Core.dependency.module;
-
-            for (let k in ref) {
-                if (Core.dependency.module.hasOwnProperty(k)) {
-                    modules.push(k);
-                }
-            }
-        }
-
-        for (let i = 0, len = modules.length; i < len; i++) {
-            Core.dependency.module[modules[i]](this);
-        }
-
-        if ((typeof callback !== 'undefined') && (typeof callback === 'function')) {
-            return callback(this);
-        }
-    },
+    /**
+     * @name {{LIB_NAME}}.bindjQuery
+     * @description 작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수
+     * @param {Object} Klass 클래스
+     * @param {string} name 플러그인명
+     * @example
+     * // 클래스 정의
+     * var Highlight = {{LIB_NAME}}.Class({
+     *     _constructor: function(selecter, options) { // 생성자의 형식을 반드시 준수 (첫번째 인수: 대상 엘리먼트, 두번째 인수: 옵션값들)
+     *         var settings = $.extend({
+     *              color: 'red',
+     *              backgroundColor: 'yellow'
+     *          }, options);
+     *
+     *          this.render(selecter, settings);
+     *     },
+     *     render: function(selecter, settings) {
+     *          $(selecter).css({
+     *              color: settings.color,
+     *              backgroundColor: settings.backgroundColor
+     *          });
+     *      }
+     * });
+     * {{LIB_NAME}}.bindjQuery(Highlight, 'highlight'); // jQuery 바인딩 선언
+     * $('body').highlight({color: 'blue', backgroundColor: 'green'}); // jQuery 바인딩 사용
+     */
+    //  bindjQuery: function(className, bindName) {
+    //      if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
+    //
+    //      const TypeClass = Core.emptyFn;
+    //
+    //      TypeClass.prototype = new className;
+    //      TypeClass.prototype.constructor = TypeClass;
+    //
+    //      $.fn[bindName] = function(options) {
+    //          const _this = this;
+    //
+    //          Core.each(this, function(index) {
+    //              if (Core.is(options, 'string')) { // 단일 메소드 실행
+    //                  new className()[options].apply(TypeClass, Array.prototype.slice.call(arguments, 1));
+    //              } else {
+    //                  className.apply(new TypeClass, [_this, options]);
+    //              }
+    //          });
+    //
+    //          return this;
+    //     };
+    // }
+    // bindjQuery: function(Klass, name, prefix) {
+    //     if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
+    //
+    //     var pluginName = (prefix)? prefix + name.substr(0, 1).toUpperCase() + name.substr(1) : name,
+    //         old = $.fn[pluginName];
+    //
+    //     $.fn[pluginName] = function(options) {
+    //         var args = Array.prototype.slice.call(arguments, 1),
+    //             _this = this,
+    //             returnValue = _this;
+    //
+    //         this.each(function() {
+    //             var $this = $(this),
+    //                 methodValue,
+    //                 instance = $this.data('ui_' + name);
+    //
+    //             if (instance && options === 'release') {
+    //                 try {
+    //                     instance.release();
+    //                 } catch (e) {}
+    //
+    //                 $this.removeData('ui_' + name);
+    //
+    //                 return;
+    //             }
+    //
+    //             if (!instance || (arguments.length === 1 && typeof options !== 'string')) {
+    //                 instance && (instance.release(), $this.removeData('ui_' + name));
+    //                 $this.data('ui_' + name, (instance = new Klass(this, Core.extend({}, $this.data(), options), _this)));
+    //             }
+    //
+    //             if (options === 'instance') {
+    //                 returnValue = instance;
+    //
+    //                 return false;
+    //             }
+    //
+    //             if (typeof options === 'string' && Core.is(instance[options], 'function')) {
+    //                 if (options.substr(0, 1) === '_') {
+    //                     throw new Error('[bindjQuery] private 메소드는 호출할 수 없습니다.');
+    //                 }
+    //
+    //                 try {
+    //                     methodValue = instance[options].apply(instance, args);
+    //                 } catch (e) {
+    //                     console.error('[' + name + '.' + options + ' error] ' + e);
+    //                 }
+    //
+    //                 if (methodValue !== instance && typeof methodValue !== 'undefined') {
+    //                     returnValue = methodValue;
+    //
+    //                     return false;
+    //                 }
+    //             }
+    //         });
+    //
+    //         return returnValue;
+    //     };
+    //
+    //     // 기존의 모듈로 복구
+    //     $.fn[pluginName].noConflict = function() {
+    //         $.fn[pluginName] = old;
+    //
+    //         return this;
+    //     };
+    // }
 
     /**
      * @name {{LIB_NAME}}.define
-     * @description 코어 하위에 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
+     * @description 코어 하위 name에 해당하는 네임스페이스를 생성하여 object를 설정해주는 함수
      * @param {String} part - .를 구분자로 해서 {{LIB_NAME}}을 시작으로 하위 네임스페이스를 생성하며 part가 없으면 {{LIB_NAME}}에 추가된다.
      * @param {Object|Function} obj - 지정된 네임스페이스에 등록할 객체, 함수 등
      * @return {Object} 생성된 새로운 네임스페이스
@@ -240,129 +355,14 @@ extend(Core, {
         }
 
         return ((leaf && (parent[leaf])? Core.extend(parent[leaf], obj) : (parent[leaf] = obj))) || Core.extend(parent, obj), obj;
-    },
-
-    /**
-     * @name {{LIB_NAME}}.bindjQuery
-     * @description 작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수
-     * @param {Object} Klass 클래스
-     * @param {string} name 플러그인명
-     * @example
-     * // 클래스 정의
-     * var Highlight = {{LIB_NAME}}.Class({
-     *     _constructor: function(selecter, options) { // 생성자의 형식을 반드시 준수 (첫번째 인수: 대상 엘리먼트, 두번째 인수: 옵션값들)
-     *         var settings = $.extend({
-     *              color: 'red',
-     *              backgroundColor: 'yellow'
-     *          }, options);
-     *
-     *          this.render(selecter, settings);
-     *     },
-     *     render: function(selecter, settings) {
-     *          $(selecter).css({
-     *              color: settings.color,
-     *              backgroundColor: settings.backgroundColor
-     *          });
-     *      }
-     * });
-     * {{LIB_NAME}}.bindjQuery(Highlight, 'highlight'); // jQuery 바인딩 선언
-     * $('body').highlight({color: 'blue', backgroundColor: 'green'}); // jQuery 바인딩 사용
-     */
-    //  bindjQuery: function(className, bindName) {
-    //     if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
-    //
-    //     const TypeClass = Core.emptyFn;
-    //
-    //     TypeClass.prototype = new className;
-    //     TypeClass.prototype.constructor = TypeClass;
-    //
-    //     $.fn[bindName] = function(options) {
-    //         const _this = this;
-    //
-    //         Core.each(this, function(index) {
-    //             if (Core.is(options, 'string')) { // 단일 메소드 실행
-    //                 new className()[options].apply(TypeClass, Array.prototype.slice.call(arguments, 1));
-    //             } else {
-    //                 className.apply(new TypeClass, [_this, options]);
-    //             }
-    //         });
-    //
-    //         return this;
-    //     };
-    // }
-    bindjQuery: function(Klass, name, prefix) {
-        if (typeof jQuery == 'undefined') { throw new Error('This library requires jQuery'); }
-
-        var pluginName = (prefix)? prefix + name.substr(0, 1).toUpperCase() + name.substr(1) : name,
-            old = $.fn[pluginName];
-
-        $.fn[pluginName] = function(options) {
-            var args = Array.prototype.slice.call(arguments, 1),
-                _this = this,
-                returnValue = _this;
-
-            this.each(function() {
-                var $this = $(this),
-                    methodValue,
-                    instance = $this.data('ui_' + name);
-
-                if (instance && options === 'release') {
-                    try {
-                        instance.release();
-                    } catch (e) {}
-
-                    $this.removeData('ui_' + name);
-
-                    return;
-                }
-
-                if (!instance || (arguments.length === 1 && typeof options !== 'string')) {
-                    instance && (instance.release(), $this.removeData('ui_' + name));
-                    $this.data('ui_' + name, (instance = new Klass(this, Core.extend({}, $this.data(), options), _this)));
-                }
-
-                if (options === 'instance') {
-                    returnValue = instance;
-
-                    return false;
-                }
-
-                if (typeof options === 'string' && Core.is(instance[options], 'function')) {
-                    if (options.substr(0, 1) === '_') {
-                        throw new Error('[bindjQuery] private 메소드는 호출할 수 없습니다.');
-                    }
-
-                    try {
-                        methodValue = instance[options].apply(instance, args);
-                    } catch (e) {
-                        console.error('[' + name + '.' + options + ' error] ' + e);
-                    }
-
-                    if (methodValue !== instance && typeof methodValue !== 'undefined') {
-                        returnValue = methodValue;
-
-                        return false;
-                    }
-                }
-            });
-
-            return returnValue;
-        };
-
-        // 기존의 모듈로 복구
-        $.fn[pluginName].noConflict = function() {
-            $.fn[pluginName] = old;
-
-            return this;
-        };
     }
 });
 
 /** 코어 별칭 */
 Core.name = Core.constructor;
-Core.ver = Core.version;
-Core.ns = Core.namespace;
-Core.modules = Core.dependency;
-Core.module = Core.dependency.module = {};
+// Core.ver = Core.version;
+// Core.ns = Core.namespace;
+// Core.modules = Core.dependency;
+// Core.module = Core.dependency.module = {};
 
 export {Core};

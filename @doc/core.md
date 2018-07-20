@@ -5,7 +5,7 @@
 
 ## 기본기능
 
-- [name](#name)
+- [constructor](#constructor)
 - [version](#version)
 - [debug](#debug)
     - log()
@@ -21,18 +21,17 @@
 - [is()](#is)
 - [isEmpty()](#isempty)
 - [hasOwn()](#hasown)
-- [namespace()](#namespace)
-- [dependency()](#dependency)
 - [define()](#define)
-- [bindjQuery()](#bindjquery)
 
 <br>
 
-## name
+## constructor
 코어명을 네이밍을 가져옵니다.
 
+`Alias: name`
+
 ```js
-{{LIB_NAME}}.name;
+{{LIB_NAME}}.constructor;
 
 // JUI
 ```
@@ -43,8 +42,6 @@
 
 ## version
 코어 버전을 가져옵니다.
-
-`Alias: ver`
 
 ```js
 {{LIB_NAME}}.ver;
@@ -414,127 +411,23 @@ var obj = {a: 'A'};
 
 <br>
 
-## namespace()
-네임스페이스 공간을 생성하고 객체를 설정하며 `.`을 구분자로 하여 하위 네임스페이스가 생성 됩니다.
-
-`Alias: ns()`
+## define()
+코어 하위 name에 해당하는 확장 네임스페이스를 생성해주는 함수 입니다.
 
 API | 설명
 --- | ---
-@param {String} | 네임스페이스명
+@param {String} | 코어 식별자 네임 하위의 확장명
 @param {Object or Function} | 지정된 네임스페이스에 등록할 객체, 함수 등
 @return {Object} | 생성된 새로운 네임스페이스
-
+     
 ```js
-{{LIB_NAME}}.namespace('app.ui.Module', {});
-
-// var app = {
-//     ui: {
-//         Module: {}
-//     }
-// };
-```
-
-[▲ 기본기능 목록 이동](#기본기능)
-
-<br>
-
-## dependency()
-의존성 모듈 패턴을 추가하고 사용 합니다.
-
-```js
-// 모듈 추가 패턴
-{{LIB_NAME}}.dependency.module.모듈명 = function(app) {
-    app.모듈이름 = function() {};
-});
-```
-```js
-// 모듈 사용 패턴
-{{LIB_NAME}}.dependency(['모듈명, ...'], function(Module) {
-    Module.모듈이름();
-});
-```
-
-### 모듈 추가
-
-`Alias: modules.module`
-
-```js
-// device 모듈 추가
-{{LIB_NAME}}.dependency.module.device = function(app) {
-    app.deviceChk = function() {
-        console.log('deviceChk');
-    };
-
-    app.isMobile = {{LIB_NAME}}.Class({
-        _constructor: function() {
-            console.log('isMobile');    
-        }
-    });
-};
-
-// os 모듈 추가
-{{LIB_NAME}}.dependency.module.os = function(app) {
-    app.isFlatForm = function(viewType, callback) {
-        console.log('isFlatForm');
-    };
-};
-```
-
-### 추가된 모듈 사용
-
-`Alias: modules()`
-
-```js
-// 의존성 모듈 선언을 생략 시 전체 모듈 사용
-{{LIB_NAME}}.dependency(function(Module) {});
-```
-```js
-// 의존성 모듈 '*' 전체선택자 사용 시 전체 모듈 사용
-{{LIB_NAME}}.dependency(['*'], function(Module) {});
-```
-```js
-// 추가된 의존성 모듈 선언시 개별적 모듈 사용
-{{LIB_NAME}}.dependency(['device', 'os'], function(Module) {
-    console.log(Module); // {device, os} 추가한 모듈 객체가 인자로 들어온다.
-    Module.deviceChk(); // 추가한 모듈의 메소드, 프로퍼티 사용
-});
-```
-
-[▲ 기본기능 목록 이동](#기본기능)
-
-<br>
-
-## bindjQuery()
-작성된 클래스를 jQuery의 플러그인으로 사용할 수 있도록 바인딩시켜 주는 함수 입니다.
-
-`jQuery를 로드 해야 사용 가능`
-
-API | 설명
---- | ---
-@param {Object} | 클래스
-@param {string} | 플러그인명
-
-```js
-var Highlight = {{LIB_NAME}}.Class({
-    _constructor: function(selecter, options) { // 생성자의 형식을 반드시 준수 (첫번째 인수: 대상 엘리먼트, 두번째 인수: 옵션값들)
-        var settings = $.extend({
-            color: 'red',
-            backgroundColor: 'yellow'
-        }, options);
-
-        this.render(selecter, settings);
-    },
-    render: function(selecter, settings) {
-        $(selecter).css({
-            color: settings.color,
-            backgroundColor: settings.backgroundColor
-        });
-    }
+{{LIB_NAME}}.define('urls', {
+    store: 'Store',
+    company: 'Company'
 });
 
-{{LIB_NAME}}.bindjQuery(Highlight, 'highlight'); // jQuery 바인딩 선언
-$('body').highlight({color: 'blue', backgroundColor: 'green'}); // jQuery 바인딩 사용
+console.log({{LIB_NAME}}.urls.store);
+console.log({{LIB_NAME}}.urls.company);
 ```
 
 [▲ 기본기능 목록 이동](#기본기능)

@@ -3,7 +3,7 @@
 ## [Core](core.md)
 > 기본 코어 기능
 
-- name
+- constructor
 - version
 - debug
 - each()
@@ -17,10 +17,7 @@
 - is()
 - isEmpty()
 - hasOwn()
-- namespace()
-- dependency()
 - define()
-- bindjQuery()
 
 <br>
 
@@ -176,10 +173,25 @@
 - nextSeq()
 - template()
 
+## [Namespace](namespace.md)
+> 네임스페이스 관련 코어 확장 기능
+
+- namespace()
+
+## [Dependency](dependency.md)
+> 의존성 모듈 관련 코어 확장 기능
+
+- dependency()
+
 ## [Class](class.md)
 > 클래스 관련 코어 확장 기능
 
 - Class()
+
+## [BindjQuery](bindjQuery.md)
+> jQuery 바인딩 코어 확장 기능
+
+- bindjQuery()
 
 ## [Env](env.md)
 > 환경변수 관련 코어 확장 기능
