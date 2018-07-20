@@ -256,7 +256,7 @@ API | 설명
 // true
 ```
 ```js
-{{LIB_NAME}}.is(document.getElementById('box'), 'element');
+{{LIB_NAME}}.is(document.body, 'element');
 
 // true
 ```
@@ -319,11 +319,6 @@ API | 설명
 {{LIB_NAME}}.is(/[a-z]/);
 
 // 'regexp'
-```
-```js
-{{LIB_NAME}}.is(document.body);
-
-// 'element'
 ```
 
 [▲ 기본기능 목록 이동](#기본기능)

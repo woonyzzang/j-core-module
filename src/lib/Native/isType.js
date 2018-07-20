@@ -39,7 +39,9 @@ const isType = (value, typeName) => {
         return (isGet)? name : typeName === name;
     }
 
-    if (typeof value === null) {
+    if (value && typeof typeName === 'undefined') {
+        resultType = type;
+    } else if (value === null) {
         resultType = result('null');
     } else if (value && value.nodeType) {
         if (value.nodeType === 1 || value.nodeType === 9) {
