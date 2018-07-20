@@ -44,7 +44,7 @@
 코어 버전을 가져옵니다.
 
 ```js
-{{LIB_NAME}}.ver;
+{{LIB_NAME}}.version;
 
 // v1.0.0
 ```
