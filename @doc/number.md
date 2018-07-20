@@ -16,6 +16,8 @@
 ## addComma()
 세자릿수 마다 ,(콤마)를 삽입 합니다.
 
+`Alias: {{LIB_NAME}}.comma`
+
 API | 설명
 --- | ---
 @param {Number} | 숫자값

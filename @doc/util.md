@@ -35,6 +35,8 @@
 ## browser
 웹 브라우저 정보를 확인 합니다.
 
+`Alias: {{LIB_NAME}}.browser`
+
 ```js
 // 터치디바이스 여부
 {{LIB_NAME}}.util.browser.isTouch

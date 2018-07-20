@@ -225,6 +225,9 @@ const addonUtil = () => {
             return result;
         }
     });
+
+    /** 코어 별칭 */
+    Core.browser = Core.util.browser;
 };
 
 export {addonUtil};
