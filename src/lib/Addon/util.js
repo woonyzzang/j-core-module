@@ -102,10 +102,10 @@ const addonUtil = () => {
          * @param {*} scope - 컨텍스트
          * @return {Function}
          * @example
-         * // 리사이징 중일 때는 #box의 크기를 변경하지 않다가,
-         * // 리사이징이 끝나고 0.5초가 지난 후에 #box사이즈를 변경하고자 할 경우에 사용.
+         * // 리사이징 중일 때는 이벤트를 발생시키지 않다가,
+         * // 리사이징이 끝나고 0.5초가 지난 후에 이벤트를 발생시키고자 할 경우 사용.
          * window.addEventListener('resize', {{LIB_NAME}}.util.delayRun(function() {
-         *		console.log('test');
+         *		console.log('resizeend');
          *  }, 500), false);
          */
         delayRun: function(fn, time, scope) {
@@ -131,7 +131,7 @@ const addonUtil = () => {
          * @name {{LIB_NAME}}.util.getUniqId
          * @return {string}
          * @example
-         * {{LIB_NAME}}.util.getUniqId(45)
+         * {{LIB_NAME}}.util.getUniqId(45); //eronv05ez56qjypsvrzheypyariyh6deodwpqu74j834w
          */
         getUniqId: function(len) {
             len = len || 32;
@@ -143,11 +143,11 @@ const addonUtil = () => {
         },
 
         /**
-         * 순번으로 유니크값 을 생성해서 반환
+         * 순번으로 유니크값을 생성해서 반환
          * @name {{LIB_NAME}}.util.nextSeq
          * @return {number}
          * @example
-         * {{LIB_NAME}}.util.nextSeq()
+         * {{LIB_NAME}}.util.nextSeq(); // 순차적으로 실행할 때 마다 1, 2, 3... 반환
          */
         nextSeq: (function () {
             let seq = 0;
@@ -204,7 +204,7 @@ const addonUtil = () => {
         /**
          * 템플릿 생성
          * @name {{LIB_NAME}}.util.template2
-         * @param {String} text - 템플릿 문자열
+         * @param {DOMSeletor} selector - DOM 셀렉터
          * @param {Object} data - 템플릿 문자열에서 변환될 데이터
          * @return {Object} 변환된 DOM Chunk 반환
          * @example
