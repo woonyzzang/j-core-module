@@ -12,12 +12,12 @@
 - [reverse()](#reverse)
 - [extend()](#extend)
 - [clone()](#clone)
-- [emptyFn](#emptyFn)
-- [tmpInput](#tmpInput)
-- [tmpNode](#tmpNode)
+- [emptyFn](#emptyfn)
+- [tmpInput](#tmpinput)
+- [tmpNode](#tmpnode)
 - [is()](#is)
-- [isEmpty()](#isEmpty)
-- [hasOwn()](#hasOwn)
+- [isEmpty()](#isempty)
+- [hasOwn()](#hasown)
 - [namespace()](#namespace)
 - [dependency()](#dependency)
 - [define()](#define)
@@ -462,7 +462,7 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} | 파츠명 `.`을 구분자로 코어 안에 하위 네임스페이스를 생성한다.
+@param {String} | 파츠명 `.`을 구분자로 코어 안에 하위 네임스페이스를 생성
 @param {Object or Function} | 지정된 네임스페이스에 등록할 객체, 함수 등
 @return {Object} | 생성된 새로운 네임스페이스
 
