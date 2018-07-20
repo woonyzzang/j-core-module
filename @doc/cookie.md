@@ -1,4 +1,4 @@
-###### j core module
+###### Core > cookie
 
 # {{LIB_NAME}}.cookie
 > 쿠키 관련 코어 확장 기능을 사용할 수 있습니다.

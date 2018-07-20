@@ -1,4 +1,4 @@
-###### j core module
+###### Core > string
 
 # {{LIB_NAME}}.string
 > 문자열 관련 코어 확장 기능을 사용할 수 있습니다.

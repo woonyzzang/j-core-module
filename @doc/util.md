@@ -1,4 +1,4 @@
-###### j core module
+###### Core > util
 
 # {{LIB_NAME}}.util
 > 유틸리티 관련 코어 확장 기능을 사용할 수 있습니다.

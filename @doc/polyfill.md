@@ -1,4 +1,4 @@
-###### j core module
+###### Core
 
 # Polyfill
 > 코어 로드 시 폴리필 기능을 사용할 수 있습니다.

@@ -1,4 +1,4 @@
-###### j core module
+###### Core > array
 
 # {{LIB_NAME}}.array
 > 배열 관련 코어 확장 기능을 사용할 수 있습니다.

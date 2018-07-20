@@ -1,4 +1,4 @@
-###### j core module
+###### Core > env
 
 # {{LIB_NAME}}.env
 > 환경변수 관련 코어 확장 기능을 사용할 수 있습니다.
