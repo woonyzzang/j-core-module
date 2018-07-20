@@ -1,4 +1,4 @@
-###### {{LIB_NAME}} > number
+###### Core > number
 
 # {{LIB_NAME}}.number
 > 숫자 관련 코어 확장 기능을 사용할 수 있습니다.
