@@ -1,5 +1,4 @@
 import {global} from '../config';
-
 import {Core} from '../Core/core';
 import {isPlainObject} from '../Native/isPlainObject';
 

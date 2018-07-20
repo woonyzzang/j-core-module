@@ -34,7 +34,7 @@ const each = (obj, cb, context) => {
             }
         }
     } else {
-        throw new Error('each 함수는 배열이나 객체에만 사용할 수 있습니다.');
+        //throw new Error('each 함수는 배열이나 객체에만 사용할 수 있습니다.');
     }
 
     return obj;

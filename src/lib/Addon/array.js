@@ -186,7 +186,7 @@ const addonArray = () => {
             include: function (array, value, b) {
                 if (!Core.is(array, 'array')) { return value; }
 
-                if (typeof value === 'function') {
+                if (Core.is(value, 'function')) {
                     for (let i = 0, len = array.length; i < len; i++) {
                         if (value(array[i], i) === true) { return true; }
                     }

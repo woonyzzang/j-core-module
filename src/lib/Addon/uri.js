@@ -1,5 +1,4 @@
 import {doc} from '../config';
-
 import {Core} from '../Core/core';
 
 /**

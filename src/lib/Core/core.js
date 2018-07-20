@@ -1,5 +1,4 @@
 import {global, doc, LIB_NAME as core} from '../config';
-
 import {debug} from '../Native/debug';
 import {isType} from '../Native/isType';
 // import {isPlainObject} from '../Native/isPlainObject';

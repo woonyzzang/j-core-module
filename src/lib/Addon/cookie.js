@@ -1,5 +1,6 @@
 import {doc} from '../config';
 import {Core} from '../Core/core';
+import {bind} from '../Polyfill/bind';
 
 /**
  * @namespace
@@ -27,7 +28,7 @@ const addonCookie = () => {
          */
         set: function(name, value, options) {
             if (!Core.is(name, 'string')) {
-                Core.each(name, function(val, key) {
+                Core.each(name, function(key, val) {
                     this.set(key, value, value);
                 }.bind(this));
 
@@ -90,14 +91,14 @@ const addonCookie = () => {
         },
 
         /**
-         * sep를 구분자로 하여 문자열로 조합하여 쿠키값 셋팅
+         * sep를 구분자로 하여 문자열로 조합하여 쿠키값 설정
          * @name {{LIB_NAME}}.cookie.setItem
          * @param {String} name - 쿠키명
          * @param {String} val - 값
          * @param {String} sep - 구분자
          * @example
          * {{LIB_NAME}}.cookie.setItem('arr', 'a'); // ['a']
-         * {{LIB_NAME}}.cookie.setItem('arr', 'b'); // ['b']
+         * {{LIB_NAME}}.cookie.setItem('arr', 'b', ':'); // ['a:b']
          */
         setItem: function(name, val, sep) {
             sep = sep || '|';
@@ -108,11 +109,13 @@ const addonCookie = () => {
 
             if (!Core.array.include(values, val)) { values.push(val); }
 
+            console.log( typeof [name, values.join(sep)].concat(arguments) );
+
             this.set.apply(this, [name, values.join(sep)].concat(arguments));
         },
 
         /**
-         * sep를 구분자 문자열로 조합 쿠키값 삭제
+         * sep를 구분자 문자열로 조합 쿠키값 가져오기
          * @name {{LIB_NAME}}.cookie.getItems
          * @param {String} name - 쿠키명
          * @example
@@ -127,13 +130,13 @@ const addonCookie = () => {
         },
 
         /**
-         * name에 셋팅되어 있던 조합문자열에서 val를 제거
+         * sep의 구분자 name에 셋팅되어 있던 조합문자열에서 val를 제거
          * @name {{LIB_NAME}}.cookie.removeItem
          * @param {String} name - 쿠키명
          * @param {String} val - 값
-         * @param {String} sep
+         * @param {String} sep - 구분자
          * @example
-         * {{LIB_NAME}}.cookie.removeItem('arr', 'b'); // arr='a'
+         * {{LIB_NAME}}.cookie.removeItem('arr', 'b'); // [a]
          */
         removeItem: function(name, val, sep) {
             sep = sep || '|';
