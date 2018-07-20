@@ -5,6 +5,8 @@
 
 ## 기본기능
 
+- [name](#name)
+- [ver](#ver)
 - [debug](#debug)
     - log()
     - logs()
@@ -21,6 +23,32 @@
 - [namespace()](#namespace)
 - [dependency()](#dependency)
 - [define()](#define)
+
+<br>
+
+## name
+코어 네이밍을 확인 합니다.
+
+```js
+{{LIB_NAME}}.name;
+
+// JUI
+```
+
+[▲ 기본기능 목록 이동](#기본기능)
+
+<br>
+
+## ver
+코어 버전을 확인 합니다.
+
+```js
+{{LIB_NAME}}.ver;
+
+// v1.0.0
+```
+
+[▲ 기본기능 목록 이동](#기본기능)
 
 <br>
 
@@ -376,6 +404,8 @@ var obj = {a: 'A'};
 
 ## namespace()
 네임스페이스 공간을 생성하고 객체를 설정하며 `.`을 구분자로 하여 하위 네임스페이스가 생성 됩니다.
+
+`Alias: ns()`
 
 API | 설명
 --- | ---

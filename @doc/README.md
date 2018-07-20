@@ -1,6 +1,8 @@
 ## [Core](core.md)
 > 기본 코어 기능
 
+- name
+- ver
 - debug
 - each()
 - reverse()
