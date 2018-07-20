@@ -462,10 +462,15 @@ API | 설명
 
 API | 설명
 --- | ---
-@param {String} | `.`을 구분자로 해서 코어를 시작으로 하위 네임스페이스를 생성하며 part가 없으면 코어에 추가된다.
+@param {String} | 파트명 `.`을 구분자로 코어 안에 하위 네임스페이스를 생성한다.
 @param {Object or Function} | 지정된 네임스페이스에 등록할 객체, 함수 등
 @return {Object} | 생성된 새로운 네임스페이스
 
+```js
+{{LIB_NAME}}.define('urls');
+
+console.log({{LIB_NAME}}.urls);
+```
 ```js
 {{LIB_NAME}}.define('urls', {
     store: 'Store',
