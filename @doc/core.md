@@ -439,7 +439,7 @@ API | 설명
 {{LIB_NAME}}.dependency(['모듈명, ...'], function(Module) {});
 ```
 
-## 모듈 추가
+### 모듈 추가
 
 `Alias: modules.module`
 
@@ -463,7 +463,7 @@ API | 설명
 };
 ```
 
-## 추가된 모듈 사용
+### 추가된 모듈 사용
 
 `Alias: modules()`
 
