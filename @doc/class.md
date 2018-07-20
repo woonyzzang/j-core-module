@@ -38,6 +38,7 @@ var Person = {{LIB_NAME}}.Class({
     _constructor: function() {}
 });
 
+// 클래스에 메소드 추가
 Person.members({
     newFunc: function() {
         console.log('newFunc');
