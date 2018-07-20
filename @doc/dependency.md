@@ -27,7 +27,7 @@
 
 ### 모듈 추가
 
-`Alias: modules.module`
+`Alias: modules.module = {}`
 
 ```js
 // device 모듈 추가
