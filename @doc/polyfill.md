@@ -26,7 +26,7 @@ HTML5 템플릿 엘리먼트 폴리필 기능을 지원 합니다.
 <style>template{display:none}</style>
 </head>
 <body>
-<template id="example">
+<template>
     <h1>This is template content.</h1>
     <p>Its really great.</p>
 </template>

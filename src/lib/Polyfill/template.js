@@ -13,7 +13,7 @@ import {doc} from '../config';
  * </head>
  * 3. BODY 안에 탬플릿 엘리먼트 사용
  * <body>
- * <template id="example">
+ * <template>
  *     <h1>This is template content.</h1>
  *     <p>Its really great.</p>
  * </template>
