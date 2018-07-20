@@ -1,9 +1,9 @@
 ###### j core module
 
-# {{LIB_NAME}}.array
-> 폴리필 관련 코어 확장 기능을 사용할 수 있습니다.
+# Polyfill
+> 코어 로드 시 폴리필 기능을 사용할 수 있습니다.
 
-## 확장기능
+## 폴리필기능
 
 - [querySelector()](#queryselector)
 - [querySelectorAll()](#queryselectorall)
@@ -25,7 +25,7 @@ API | 설명
 document.querySelector('#gnb');
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
 
 <br>
 
@@ -47,7 +47,7 @@ document.querySelectorAll('a')[0];
 // <a> 엘리먼트 첫번째 선택
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
 
 <br>
 
@@ -62,7 +62,7 @@ API | 설명
 document.getElementsByClassName('tab_menu');
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
 
 <br>
 
@@ -86,7 +86,7 @@ Test.bind({name: 'axl rose'})();
 // 'axl rose';
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
 
 <br>
 
@@ -120,7 +120,7 @@ $target.appendChild($template.content.cloneNode(true));
 </html>
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
 
 <br>
 
@@ -138,4 +138,4 @@ if (matchMedia('only screen and (max-width: 480px)').matches) {}
 if (matchMedia('all and (orientation:landscape)').matches) {}
 ```
 
-[▲ 확장기능 목록 이동](#확장기능)
+[▲ 폴리필 목록 이동](#폴리필)
