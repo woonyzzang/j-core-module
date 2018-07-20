@@ -20,6 +20,7 @@
 - namespace()
 - dependency()
 - define()
+- bindjQuery()
 
 <br>
 
