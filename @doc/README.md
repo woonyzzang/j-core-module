@@ -87,7 +87,7 @@
 - remove()
 - stringify()
 
-## [date](date.md)
+## [Date](date.md)
 > 날짜 관련 코어 확장 기능
 
 - parse()
@@ -108,7 +108,7 @@
 - max()
 - normalize()
 
-## [uri](uri.md)
+## [URI](uri.md)
 > URL 관련 코어 확장 기능
 
 - getHost()
@@ -119,7 +119,7 @@
 - removeHash()
 - getParam()
 
-## [dom](dom.md)
+## [DOM](dom.md)
 > DOM 관련 코어 확장 기능
 
 - getEventPoint()
@@ -133,7 +133,7 @@
 - toggleClass()
 - addEvent()
 
-## [css3](css3.md)
+## [CSS3](css3.md)
 > CSS3 관련 코어 확장 기능
 
 - prefix()
@@ -153,7 +153,7 @@
 - animate()
 - transitionStyle()
 
-## [cookie](cookie.md)
+## [Cookie](cookie.md)
 > 쿠키 관련 코어 확장 기능
 
 - set()
@@ -177,7 +177,7 @@
 
 - Class()
 
-## [env](env.md)
+## [Env](env.md)
 > 환경변수 관련 코어 확장 기능
 
 - get()
