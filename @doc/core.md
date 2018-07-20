@@ -67,7 +67,7 @@ API | 설명
 {{LIB_NAME}}.debug.log('log...'); // 로그 확인(클린)
 ```
 ```js
-{{LIB_NAME}}.debug.logs('logs...'); // 다중로그 확인
+{{LIB_NAME}}.debug.logs('logs...'); // 로그 확인(다중)
 ```
 
 [▲ 기본기능 목록 이동](#기본기능)
