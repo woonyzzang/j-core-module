@@ -160,11 +160,10 @@ const addonClass = () => {
                  * @example
                  * var Child = {{LIB_NAME}}.Class({
                  *    $singleton: true,
-                 *    show: function(){
+                 *    show: function() {
                  *        alert('hello');
                  *    }
                  * });
-                 * Child.getInstance().show();
                  * Child.getInstance().show();
                  */
                 TypeClass.getInstance = function() {
@@ -270,7 +269,7 @@ const addonClass = () => {
             /**
 			 * @memberOf common.Class
 			 * @name members
-			 * @description 클래스에 메소드  추가
+			 * @description 클래스에 메소드 추가
 			 * @function
 			 * @param {function} o 객체
 			 * @example
@@ -333,12 +332,12 @@ const addonClass = () => {
          * @description 루트클래스 생성
          * @class
          * @example
-         * var Person = {{LIB_NAME}}.Class({  // 또는 var Person = scui.Class({ 으로 구현해도 동일하다.
+         * var Person = {{LIB_NAME}}.Class({
     	 *	    $singleton: true, // 싱글톤 여부
     	 *	    $statics: { // 클래스 속성 및 함수
     	 *		    live: function() {} // Person.live(); 으로 호출
     	 *	    },
-    	 *	    $mixins: [Animal, Robot], // 특정 클래스에서 메소드들을 빌려오고자 할 때 해당 클래스를 지정(다중으로도 가능),
+    	 *	    $mixins: [Animal, Robot], // 특정 클래스에서 메소드들을 빌려오고자 할 때 해당 클래스를 지정(다중으로도 가능)
     	 *	    _constructor: function(name) {
     	 *		    this.name = name;
     	 *	    },
@@ -351,8 +350,9 @@ const addonClass = () => {
     	 * });
     	 *
     	 * // Person에서 상속받아 Man클래스를 구현하는 경우
-         * var Man = Person.extend({
-    	 *     initialize: function(name, age) {
+         * var Man = {{LIB_NAME}}.Class({
+         *     $extend: Person,
+    	 *     _constructor: function(name, age) {
     	 *         this.supr(name);  // Person(부모클래스)의 initialize메소드를 호출 or this.suprMethod('initialize', name);
     	 *         this.age = age;
     	 *     },
