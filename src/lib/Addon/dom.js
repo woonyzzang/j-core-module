@@ -252,7 +252,7 @@ const addonDom = () => {
         /**
          * http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
          * @name {{LIB_NAME}}.dom.ready
-         * @description document 로드 이벤트 핸들러
+         * @description document 로드 완료 이벤트 핸들러
          * @param {Function} callback - 콜백함수
          * @example
          * {{LIB_NAME}}.dom.ready(function() {

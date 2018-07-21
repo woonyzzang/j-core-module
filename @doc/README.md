@@ -133,6 +133,7 @@
 - hasClass()
 - toggleClass()
 - addEvent()
+- ready()
 
 ## [Css3](css3.md)
 > CSS3 관련 코어 확장 기능

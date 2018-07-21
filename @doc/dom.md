@@ -15,6 +15,7 @@
 - [hasClass()](#hasclass)
 - [toggleClass()](#toggleclass)
 - [addEvent()](#addevent)
+- [ready()](#ready)
 
 <br>
 
@@ -199,6 +200,25 @@ API | 설명
 {{LIB_NAME}}.dom.addEvent({selector}, 'click', function(e) {
     alert('clicked!');
 });
+```
+
+[▲ 확장기능 목록 이동](#확장기능)
+
+<br>
+
+## ready()
+document 로드 완료 시 이벤트를 발생 시킵니다.
+
+API | 설명
+--- | ---
+@param {Function} | 콜백함수
+
+```js
+{{LIB_NAME}}.dom.ready(function() {
+    console.log('DOM Loaded!');
+});
+    
+// DOM Loaded!
 ```
 
 [▲ 확장기능 목록 이동](#확장기능)
