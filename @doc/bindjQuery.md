@@ -3,10 +3,6 @@
 # {{LIB_NAME}}.bindjQuery
 > jQuery 바인딩 관련 코어 확장 기능을 사용할 수 있습니다.
 
-## 확장기능
-
-- [bindjQuery()](#bindjquery)
-
 <br>
 
 ## bindjQuery()

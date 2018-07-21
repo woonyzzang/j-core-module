@@ -193,6 +193,14 @@
 
 - bindjQuery()
 
+## [import](import.md)
+> CSS, JavaScript 파일 동적 로드 코어 확장 기능
+
+- loadcss()
+- loadjs()
+- load()
+- addAliases()
+
 ## [Env](env.md)
 > 환경변수 관련 코어 확장 기능
 

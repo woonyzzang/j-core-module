@@ -3,10 +3,6 @@
 # {{LIB_NAME}}.dependency
 > 의존성 모듈 관련 코어 확장 기능을 사용할 수 있습니다.
 
-## 확장기능
-
-- [dependency()](#dependency)
-
 <br>
 
 ## dependency()

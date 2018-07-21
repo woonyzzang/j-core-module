@@ -3,10 +3,6 @@
 # {{LIB_NAME}}.Class
 > 클래스 관련 코어 확장 기능을 사용할 수 있습니다.
 
-## 확장기능
-
-- [Class()](#class)
-
 <br>
 
 ## Class()
