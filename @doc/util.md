@@ -154,7 +154,7 @@ API | 설명
 ```js
 {{LIB_NAME}}.util.getUniqId(45);
 
-//eronv05ez56qjypsvrzheypyariyh6deodwpqu74j834w
+// eronv05ez56qjypsvrzheypyariyh6deodwpqu74j834w
 ```
 
 [▲ 확장기능 목록 이동](#확장기능)
@@ -189,7 +189,7 @@ API | 설명
 ```js
 <script type="text/template" id="result">
     <p>반갑습니다! {{who}}님!</p>
-<\/script>
+</script>
 
 var tmpl = {{LIB_NAME}}.util.template(document.getElementById('result'), {who: 'woonyzzang'});
 
