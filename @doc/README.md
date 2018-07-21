@@ -194,7 +194,7 @@
 
 - bindjQuery()
 
-## [import](import.md)
+## [AsyncImport](asyncImport.md)
 > CSS, JavaScript 파일 동적 로드 코어 확장 기능
 
 - loadcss()

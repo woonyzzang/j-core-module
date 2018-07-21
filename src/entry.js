@@ -7,7 +7,7 @@
  */
 
 // import $ from './vendor/jquery-1.6.4.min';
-// import 'babel-polyfill'; // IE8 에러
+// import 'babel-polyfill'; // IE8 에러 (스택공간 부족)
 
 // import {global, doc, LIB_NAME as core} from './lib/config';
 
@@ -31,11 +31,11 @@ import {addonCss3} from './lib/Addon/css3';
 import {addonCookie} from './lib/Addon/cookie';
 import {addonUtil} from './lib/Addon/util';
 import {addonEnv} from './lib/Addon/env';
-import {addonImport} from './lib/Addon/import';
 import {addonNamespace} from './lib/Addon/namespace';
 import {addonDependency} from './lib/Addon/dependency';
 import {addonClass} from './lib/Addon/class';
 import {addonBindjQuery} from './lib/Addon/bindjQuery';
+import {addonAsyncImport} from './lib/Addon/asyncImport';
 
 /** 폴리필 */
 // https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
@@ -60,8 +60,8 @@ addonCss3();
 addonCookie();
 addonUtil();
 addonEnv();
-addonImport();
 addonNamespace();
 addonDependency();
 addonClass();
 addonBindjQuery();
+addonAsyncImport();

@@ -60,10 +60,11 @@ module.exports = {
                                     loose: true, // IE8 에러 방지 https://github.com/ediblecode/webpack3-ie8
                                     targets: {
                                         // node: 'current', // 노드일 경우만
-                                        browsers : ['last 2 versions', 'ie >= 8'],
-                                        modules: false
-                                    }
-                                // browsers : ['last 2 versions', '> 10%', 'ie 9'],
+                                        browsers : ['last 2 versions', 'ie >= 8'], // 마지막에서 2버전 및 익스8 까지 지원
+                                        debug : true,
+                                        modules: false // false로 해서 안쓰는 코드를 제거(Tree Shaking)
+                                    },
+                                    // browsers : ['last 2 versions', '> 10%', 'ie 9'],
                                 }]
                                 //'react'
                             ],
